@@ -591,3 +591,11 @@ img { max-width: 100%; height: auto; }
 @media (max-width: 700px) {
   .figure-scroll img { width: 620px; max-width: none; }
 }
+
+/* ---------- prose pages (privacy and similar) ---------- */
+
+.prose h2 { font-size: 1.18rem; margin-top: 2em; }
+.prose h2:first-child { margin-top: 0; }
+.prose p { color: var(--muted); max-width: 66ch; }
+.prose strong { color: var(--text); }
+.prose a { color: var(--text); }

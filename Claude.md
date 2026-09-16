@@ -122,7 +122,11 @@ were. The site says so explicitly, and that sentence stays.
 - **No build step, ever.** No framework, no CSS preprocessor, no bundler, no npm
   install. If a change seems to need one, it does not belong on this site.
 - **No third-party scripts, fonts or stylesheets.** Everything is served from
-  this repository.
+  this repository. This is not only a performance choice: `privacy/` states as
+  fact that the site sets no cookies, loads nothing from third parties and needs
+  no consent banner. Adding an embed, a hosted font, an analytics snippet or a
+  tracking pixel makes that page false — so it must be updated in the same
+  commit, and the consent question reopened.
 - **Relative links only** (`../assets/…`, never `/assets/…`), so the site works
   at the domain root, at a project-pages subpath, and from the filesystem.
   `404.html` is the sole exception and uses root-absolute paths, because Pages

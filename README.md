@@ -72,8 +72,24 @@ attribute on **both** forms to an endpoint accepting `POST {"email": "..."}`:
 <form class="signup" id="signup-form" data-endpoint="https://…/subscribe" novalidate>
 ```
 
-Anything that stores addresses needs a privacy notice and a working
-unsubscribe before it goes live. Add both in the same change.
+### Before the signup form goes live
+
+`privacy/` exists and is linked from both forms and every footer. It is written
+for what the site does **today** — no cookies, no trackers, no third-party
+subresources, and a form that opens your mail app rather than posting anywhere.
+Three things must be completed before an address is stored by a provider:
+
+1. **Name the provider** under "Who else sees it", and have a data-processing
+   agreement with them.
+2. **Add the registered legal entity and postal address** under "Contact". A
+   trading name and an email address are not sufficient for a UK notice once you
+   are actually processing data. There is an HTML comment at that spot.
+3. **Wire a real unsubscribe** — a working link in every message, not a reply-to
+   request.
+
+Update the "Last updated" date in the same change. If the claim that the site
+sets no cookies ever stops being true — an embed, a hosted font, an analytics
+script — that section must change in the same commit that makes it untrue.
 
 ## WhatsApp
 
