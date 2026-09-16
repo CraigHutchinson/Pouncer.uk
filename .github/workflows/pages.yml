@@ -28,7 +28,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       # Do not add `enablement: true` here. It was tried, and the workflow's
       # GITHUB_TOKEN cannot create a Pages site on this account — the run fails
@@ -36,7 +36,7 @@ jobs:
       # integration", which is a less useful message than the one below.
       # Pages has to be enabled once, by hand, in Settings → Pages.
       - name: Setup Pages
-        uses: actions/configure-pages@v4
+        uses: actions/configure-pages@v6
 
       # README.md and Claude.md are for people working on the repository, not
       # for visitors. Without this step they would be served at /README.md and
@@ -59,11 +59,15 @@ jobs:
             exit 1
           fi
 
+      # include-hidden-files is load-bearing. From v4 onwards this action's tar
+      # adds --exclude=.[^/]* unless it is set, which silently drops .nojekyll
+      # from the artifact. v3 excluded only .git and .github.
       - name: Upload the staged site as the Pages artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
           path: _site
+          include-hidden-files: true
 
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5

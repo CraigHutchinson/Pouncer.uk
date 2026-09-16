@@ -147,6 +147,19 @@ repository-only to that exclusion list when you add it here.
    once verified.
 4. **Enable "Enforce HTTPS"** once the certificate has been issued.
 
+## Action versions
+
+The deploy workflow pins major tags, currently `checkout@v7`,
+`configure-pages@v6`, `upload-pages-artifact@v5` and `deploy-pages@v5`. All four
+run on Node 24; the earlier majors ran on Node 20, which Actions has deprecated.
+
+One input is load-bearing rather than cosmetic. From v4 onwards
+`upload-pages-artifact` adds `--exclude=.[^/]*` to its tar unless
+`include-hidden-files: true` is set, so without it `.nojekyll` is silently
+dropped from the artifact — v3 excluded only `.git` and `.github`. If you bump
+that action again, check its `action.yml` for changes to that input before
+trusting the upgrade.
+
 ## Browser support
 
 Modern evergreen browsers. Layout uses CSS grid and `color-mix()`; the header
