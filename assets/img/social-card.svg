@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img"
-     aria-label="Pouncer — the smart collar that predicts the pounce.">
+     aria-label="Pouncer — the smart cat collar built to warn wildlife before the pounce.">
   <title>Pouncer</title>
   <defs>
     <radialGradient id="card-glow" cx="0.78" cy="0.12" r="0.7">
@@ -17,12 +17,14 @@
     <circle cx="138" cy="74" r="12" fill="#e0992f"/>
   </g>
 
-  <text x="88" y="360" fill="#e0992f" font-family="system-ui, sans-serif"
+  <text x="88" y="330" fill="#e0992f" font-family="system-ui, sans-serif"
         font-size="26" font-weight="700" letter-spacing="5">POUNCER</text>
-  <text x="88" y="440" fill="#f4f2ee" font-family="system-ui, sans-serif"
-        font-size="60" font-weight="700">The smart collar that</text>
-  <text x="88" y="508" fill="#f4f2ee" font-family="system-ui, sans-serif"
-        font-size="60" font-weight="700">predicts the pounce.</text>
-  <text x="88" y="562" fill="#b6bccd" font-family="system-ui, sans-serif"
+  <text x="88" y="400" fill="#f4f2ee" font-family="system-ui, sans-serif"
+        font-size="58" font-weight="700">The smart cat collar</text>
+  <text x="88" y="466" fill="#f4f2ee" font-family="system-ui, sans-serif"
+        font-size="58" font-weight="700">built to warn wildlife</text>
+  <text x="88" y="532" fill="#f4f2ee" font-family="system-ui, sans-serif"
+        font-size="58" font-weight="700">before the pounce.</text>
+  <text x="88" y="586" fill="#b6bccd" font-family="system-ui, sans-serif"
         font-size="26">Silent until it counts. · pouncer.uk</text>
 </svg>

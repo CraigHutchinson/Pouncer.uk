@@ -36,9 +36,10 @@ making that claim until a controlled trial supports it.
 
 - a percentage reduction in prey caught, or any "saves N birds" figure, before a
   controlled trial supports it;
-- a claim that Pouncer beats bells, collar covers, dietary change or play — the
-  *mechanism* by which a bell has zero warning time may be explained, but a
-  comparative outcome may not be claimed;
+- a claim that Pouncer beats bells, collar covers, dietary change or play, on
+  outcome **or on timing**. See "The bell argument (withdrawn)" below: a bell's
+  lead time is the best case, not the zero case, and no comparative timing
+  measurement exists;
 - a claim that cat predation is driving bird population declines;
 - a warning lead time or latency figure for Pouncer itself. The prey-side number
   (~80 ms startle onset in starlings) is published and attributable; our own
@@ -70,6 +71,33 @@ not add a statistic from memory — find the source, cite it, or leave it out.
 | US mortality estimates; un-owned cats cause the majority | Loss, Will & Marra (2013), *Nature Communications* |
 | No clear evidence cat predation drives UK bird declines | RSPB |
 | ~80 ms startle onset to sound in starlings | Stephen (1977), *Animal Behaviour* |
+
+### The opening must say what Pouncer is
+
+A reader landing cold must learn, in the first two lines, that this is **a
+collar for a cat** and that the thing it protects is **garden wildlife**. An
+earlier headline — "The smart collar that predicts the pounce" — named only the
+mechanism: it said what the device does without saying what it is, who wears it
+or who benefits. Do not go back to that shape.
+
+The current hero, and the test any replacement must pass:
+
+> **The smart cat collar built to warn wildlife before the pounce.**
+>
+> Your cat is doing exactly what a cat does. Pouncer is a small module for the
+> collar they already wear, built to read the launch as it begins and warn the
+> bird, vole or shrew on the other end of it — then go quiet again for the rest
+> of the day.
+
+Four things have to survive any rewrite: the word **collar**, the word **cat**,
+a named beneficiary (**wildlife**, or the bird/vole/shrew specifically), and a
+builder's frame (**built to**) rather than a present-tense capability claim. The
+non-judgmental first sentence stays too — "your cat is doing exactly what a cat
+does" is the line that keeps an owner reading.
+
+The `<title>`, `og:title`, `og:description`, the meta description and
+`assets/img/social-card.svg` all carry the headline. Change them together or the
+share preview contradicts the page.
 
 ### Two sections that must not be removed
 

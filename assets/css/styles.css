@@ -172,7 +172,7 @@ img { max-width: 100%; height: auto; }
   font-weight: 700; color: var(--accent); margin-bottom: 20px;
 }
 
-.hero h1 { color: var(--on-deep); max-width: 15ch; }
+.hero h1 { color: var(--on-deep); max-width: 22ch; }
 
 .lede {
   font-size: clamp(1.02rem, 1.6vw, 1.18rem);
