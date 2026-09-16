@@ -418,15 +418,51 @@ img { max-width: 100%; height: auto; }
 .evidence-table tbody tr:last-child td { border-bottom: 0; }
 .evidence-table td { color: var(--muted); }
 
+/* Diverging pair for "change in prey brought home": two hues either side of a
+   neutral zero, never red/green — the ink steps clear 4.5:1 for text, the mark
+   steps clear 3:1 against the surface. */
+.evidence-table {
+  --dv-down: #2a78d6;  --dv-down-ink: #1f5ca8;
+  --dv-up:   #eb6834;  --dv-up-ink:   #c14a1c;
+  --dv-zero: #b0aa9e;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .evidence-table {
+    --dv-down: #3987e5;  --dv-down-ink: #7fb0f0;
+    --dv-up:   #d95926;  --dv-up-ink:   #f0865a;
+    --dv-zero: #59637a;
+  }
+}
+:root[data-theme="dark"] .evidence-table {
+  --dv-down: #3987e5;  --dv-down-ink: #7fb0f0;
+  --dv-up:   #d95926;  --dv-up-ink:   #f0865a;
+  --dv-zero: #59637a;
+}
+
 .delta { font-weight: 700; font-variant-numeric: tabular-nums; color: var(--text); }
-.delta-good { color: #1a7f55; }
-.delta-bad { color: #b4402f; }
+.delta-down { color: var(--dv-down-ink); }
+.delta-up { color: var(--dv-up-ink); }
 .delta-flat { color: var(--muted); font-weight: 650; }
 
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) .delta-good { color: #4cc191; }
-  :root:not([data-theme="light"]) .delta-bad { color: #f08a72; }
+/* Diverging bar: zero is the centre, data-ends round away from it. */
+.dbar {
+  position: relative; height: 9px; margin: 0 0 9px;
+  background: var(--surface-alt); border-radius: 5px; min-width: 170px;
 }
+.dbar::before {
+  content: ""; position: absolute; left: 50%; top: -4px; bottom: -4px;
+  width: 1px; background: var(--dv-zero);
+}
+.dbar-fill { position: absolute; top: 0; bottom: 0; }
+.dbar-neg { right: 50%; background: var(--dv-down); border-radius: 4px 0 0 4px; }
+.dbar-pos { left: 50%; background: var(--dv-up); border-radius: 0 4px 4px 0; }
+.dbar-zero {
+  position: absolute; left: 50%; top: 50%;
+  width: 7px; height: 7px; margin: -3.5px 0 0 -3.5px;
+  border-radius: 50%; background: var(--muted);
+}
+
+.viz-note-table { margin-top: 14px; }
 
 .verdict {
   margin-top: 32px; padding: 26px;
