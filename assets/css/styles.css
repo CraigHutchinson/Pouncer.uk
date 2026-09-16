@@ -599,3 +599,18 @@ img { max-width: 100%; height: auto; }
 .prose p { color: var(--muted); max-width: 66ch; }
 .prose strong { color: var(--text); }
 .prose a { color: var(--text); }
+
+/* ---------- mid-page call to action ---------- */
+
+.cta-band {
+  background: var(--deep); color: var(--on-deep);
+  padding: clamp(28px, 4vw, 40px) 0;
+}
+.cta-band-inner {
+  display: flex; flex-wrap: wrap; align-items: center;
+  justify-content: space-between; gap: 18px;
+}
+.cta-band p {
+  margin: 0; color: var(--on-deep-muted);
+  font-size: 1.02rem; max-width: 46ch;
+}
