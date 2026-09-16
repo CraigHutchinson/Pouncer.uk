@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" role="img" aria-label="Pouncer">
+  <title>Pouncer</title>
+  <!-- Motion arc: the pounce trajectory. -->
+  <path d="M3 33 C 10 33, 12 9, 21 9 C 29 9, 32 20, 37 24"
+        fill="none" stroke="#e0992f" stroke-width="3" stroke-linecap="round"/>
+  <!-- Ears: the cat, reduced to two marks. -->
+  <path d="M14.2 12.4 L16.4 5.6 L21.4 9.6 Z" fill="#141a2e"/>
+  <path d="M23.4 9.8 L29.6 6.4 L29.1 13.6 Z" fill="#141a2e"/>
+  <!-- Launch point. -->
+  <circle cx="37" cy="24" r="3" fill="#e0992f"/>
+</svg>

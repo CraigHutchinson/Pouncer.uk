@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Pouncer">
+  <title>Pouncer</title>
+  <rect width="64" height="64" rx="14" fill="#141a2e"/>
+  <path d="M8 50 C 18 50, 21 18, 34 18 C 46 18, 50 32, 57 38"
+        fill="none" stroke="#e0992f" stroke-width="5" stroke-linecap="round"/>
+  <path d="M24 22.5 L27.5 12 L35 18.5 Z" fill="#f4f2ee"/>
+  <path d="M37.5 19 L47 13.5 L46 24.5 Z" fill="#f4f2ee"/>
+  <circle cx="57" cy="38" r="4.5" fill="#e0992f"/>
+</svg>

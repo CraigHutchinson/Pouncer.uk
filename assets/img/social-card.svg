@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img"
+     aria-label="Pouncer — the smart collar that predicts the pounce.">
+  <title>Pouncer</title>
+  <defs>
+    <radialGradient id="card-glow" cx="0.78" cy="0.12" r="0.7">
+      <stop offset="0" stop-color="#253052"/>
+      <stop offset="1" stop-color="#141a2e"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#card-glow)"/>
+
+  <g transform="translate(88 96)">
+    <path d="M0 150 C 26 150, 34 22, 70 22 C 106 22, 118 60, 138 74"
+          fill="none" stroke="#e0992f" stroke-width="10" stroke-linecap="round"/>
+    <path d="M44 38 L52 0 L79 20 Z" fill="#f4f2ee"/>
+    <path d="M85 21 L119 3 L116 42 Z" fill="#f4f2ee"/>
+    <circle cx="138" cy="74" r="12" fill="#e0992f"/>
+  </g>
+
+  <text x="88" y="360" fill="#e0992f" font-family="system-ui, sans-serif"
+        font-size="26" font-weight="700" letter-spacing="5">POUNCER</text>
+  <text x="88" y="440" fill="#f4f2ee" font-family="system-ui, sans-serif"
+        font-size="60" font-weight="700">The smart collar that</text>
+  <text x="88" y="508" fill="#f4f2ee" font-family="system-ui, sans-serif"
+        font-size="60" font-weight="700">predicts the pounce.</text>
+  <text x="88" y="562" fill="#b6bccd" font-family="system-ui, sans-serif"
+        font-size="26">Silent until it counts. · pouncer.uk</text>
+</svg>

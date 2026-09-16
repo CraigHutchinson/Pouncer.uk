@@ -1,0 +1,64 @@
+# Publishes this repository to GitHub Pages at pouncer.uk.
+#
+# The site is plain static files, so there is no build step — the only
+# processing is a staging copy that keeps repository-only documents off the
+# published site.
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow one concurrent deployment; do not cancel a run that is mid-publish.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      # README.md and Claude.md are for people working on the repository, not
+      # for visitors. Without this step they would be served at /README.md and
+      # /Claude.md.
+      - name: Stage the publishable site
+        run: |
+          set -euo pipefail
+          rm -rf _site
+          mkdir _site
+          # git archive exports exactly the tracked files at HEAD, so an
+          # untracked local file can never reach the published site.
+          git archive HEAD | tar -x -C _site
+          rm -rf _site/.github
+          rm -f  _site/README.md _site/Claude.md
+          echo "Publishing:"
+          find _site -type f | sort
+          # Fail the build rather than publish a repository document by accident.
+          if find _site -name '*.md' | grep -q .; then
+            echo "::error::Markdown file left in the publish set — see above."
+            exit 1
+          fi
+
+      - name: Upload the staged site as the Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
