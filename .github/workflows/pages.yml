@@ -30,15 +30,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      # enablement: true turns Pages on for the repository if it is not already,
-      # using the pages: write permission above, so a fresh clone of this
-      # repository deploys without a manual settings step. The CNAME file in the
-      # published artifact then claims pouncer.uk — which is the correct order:
-      # the repository claims the domain before any DNS points at GitHub.
+      # Do not add `enablement: true` here. It was tried, and the workflow's
+      # GITHUB_TOKEN cannot create a Pages site on this account — the run fails
+      # with "Create Pages site failed / Resource not accessible by
+      # integration", which is a less useful message than the one below.
+      # Pages has to be enabled once, by hand, in Settings → Pages.
       - name: Setup Pages
         uses: actions/configure-pages@v4
-        with:
-          enablement: true
 
       # README.md and Claude.md are for people working on the repository, not
       # for visitors. Without this step they would be served at /README.md and

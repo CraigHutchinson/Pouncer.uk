@@ -113,17 +113,21 @@ repository-only to that exclusion list when you add it here.
 
 ### First-time setup
 
-1. **Pages enables itself.** The workflow passes `enablement: true` to
-   `configure-pages`, so the first successful run turns Pages on and sets the
-   build type to GitHub Actions. There is no manual settings step. If that ever
-   fails with a permissions error, enable Pages by hand with source "GitHub
-   Actions" and remove the flag.
-2. **The custom domain claims itself too.** The `CNAME` file in the published
-   artifact sets `pouncer.uk` as the custom domain on the first deploy. That
-   happens before you point any DNS at GitHub, which is the order that matters:
-   DNS pointing at GitHub while no repository claims the domain is what allows
-   someone else to host a site on it. Check the domain has appeared under
-   Settings → Pages before doing the next step.
+1. **Enable Pages by hand, once.** Settings → Pages → Build and deployment →
+   Source: **GitHub Actions**. Every deploy fails until this is done, at the
+   `Setup Pages` step with "Get Pages site failed".
+
+   This cannot be automated here. `configure-pages` has an `enablement: true`
+   input for exactly this case, and it was tried: the workflow's `GITHUB_TOKEN`
+   is not permitted to create a Pages site on this account, so the run fails
+   with "Create Pages site failed / Resource not accessible by integration"
+   instead. The flag is deliberately absent, and the workflow comments say so.
+2. **The custom domain claims itself.** The `CNAME` file in the published
+   artifact sets `pouncer.uk` as the custom domain on the first successful
+   deploy. That happens before you point any DNS at GitHub, which is the order
+   that matters: DNS pointing at GitHub while no repository claims the domain is
+   what allows someone else to host a site on it. Check the domain has appeared
+   under Settings → Pages before doing the next step.
 3. **Create the DNS records.** Four `A` records at the apex:
 
    ```
