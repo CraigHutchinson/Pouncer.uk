@@ -148,6 +148,37 @@ stays.
 
 ---
 
+### The posture figures (How it works)
+
+The four cats in "How it works" are **information, not decoration**: they show
+what a stalk looks like against a launch, which is the distinction the whole
+product rests on. Keep them tied to the four stages. If a stage's copy changes,
+the posture changes with it.
+
+They are **inline SVG**, not image files, for three reasons that are all
+load-bearing:
+
+- they inherit `--cat` / `--cat-shadow` and so work in both colour schemes from
+  one source, where flat images would need a file per scheme;
+- the site fetches nothing from a third party, and inline costs zero requests;
+- the repository stays free of binaries.
+
+Construction rules, so a fifth cat matches the four:
+
+- Built from **overlapping filled primitives** sharing one fill, never one
+  continuous outline path. Outlines drawn freehand come out as thin tubes.
+- Limbs are **stroked segments with round caps**, not rotated rectangles.
+  Rotated rects are hard to aim and went missing entirely in one draft.
+- Each cat wears the disc at the throat, in `--accent`, with a `--bg` halo.
+  Measured: accent on the dark-mode body is 1.58:1 and disappears; the halo
+  gives 6.11:1 dark and 12.39:1 light.
+- Each head carries an eye cut in `--bg`. Without one the throat disc reads as
+  the eye.
+- Ground shadows sit at roughly 1.3:1 on purpose. They are decorative and carry
+  no information — do not "fix" them to 3:1, it makes the figures look heavy.
+- Every figure needs `role="img"`, `aria-labelledby` and a `<title>` describing
+  the posture, because the posture is information the step text does not give.
+
 ## Tone and language
 
 - **UK English throughout**: colour, behaviour, recognise, licence (noun),

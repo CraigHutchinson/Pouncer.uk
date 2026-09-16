@@ -16,6 +16,8 @@
   --radius: 14px;
   --wrap: 1120px;
   --font: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --cat: #253052;
+  --cat-shadow: #e2ded5;
   --font-display: ui-serif, Georgia, "Iowan Old Style", "Palatino Linotype", Palatino,
                   "Times New Roman", serif;
 }
@@ -34,6 +36,8 @@
     --accent-strong: #f5c274;
     --on-deep: #edeff4;
     --on-deep-muted: #9aa3b6;
+    --cat: #8892ab;
+    --cat-shadow: #222a38;
   }
 }
 
@@ -226,6 +230,23 @@ img { max-width: 100%; height: auto; }
   display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 20px;
 }
 .step { position: relative; padding-top: 12px; border-top: 2px solid var(--line); }
+
+/* Posture figures. They carry real information — what a stalk looks like
+   against a launch — so they are inline SVG that inherits the theme rather
+   than flat images that would need a second file per colour scheme. */
+.cat-fig { display: block; width: 100%; max-width: 230px; height: auto; margin: 4px 0 10px; }
+.cat-body { fill: var(--cat); }
+.cat-limb { fill: none; stroke: var(--cat); stroke-linecap: round; }
+.cat-shadow { fill: var(--cat-shadow); }
+/* The disc is the product in the picture, so it has to separate from the
+   silhouette in BOTH themes. Measured: accent on the dark-mode body is only
+   1.58:1, so the disc carries a halo in the page colour instead of relying on
+   hue alone. */
+.cat-collar { fill: var(--accent); stroke: var(--bg); stroke-width: 2; }
+/* Cut in the page colour, not drawn in accent: accent on the dark-mode body
+   washes out (1.58:1), the page colour does not (6.11:1 dark, 12.39:1 light).
+   Without an eye the throat disc gets read as one. */
+.cat-eye { fill: var(--bg); }
 .step-num {
   display: inline-flex; align-items: center; justify-content: center;
   width: 28px; height: 28px; border-radius: 50%;
