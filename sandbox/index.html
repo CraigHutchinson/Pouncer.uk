@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sandbox — module viewer</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/css/styles.css">
+<style>
+  .bench { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; }
+  .cell { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px; }
+  .cell h3 { margin-bottom: 10px; }
+  .stage { aspect-ratio: 1 / 1; background: var(--surface-alt); border-radius: 10px; overflow: hidden; position: relative; }
+  .stage.dark { background: #10131c; }
+  .row { display: flex; gap: 10px; align-items: center; margin-top: 12px; flex-wrap: wrap; }
+  .row label { font-size: .84rem; color: var(--muted); }
+  input[type=range] { flex: 1 1 140px; }
+  .note { font-size: .82rem; color: var(--muted); margin-top: 10px; }
+  .metrics { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .78rem;
+             color: var(--muted); white-space: pre-wrap; margin-top: 10px; }
+  .warn { border-left: 4px solid var(--accent); padding: 14px 16px; background: var(--surface-alt);
+          border-radius: 8px; margin-bottom: 22px; }
+</style>
+</head>
+<body>
+<main id="main">
+  <section class="section">
+    <div class="wrap">
+      <p class="eyebrow">Sandbox — not published</p>
+      <h1>Module viewer bench</h1>
+      <p class="section-lede">
+        A workbench for the WebGL module viewer before it goes anywhere near a real page. This
+        directory is excluded from the published site by the deploy workflow.
+      </p>
+
+      <div class="warn">
+        <strong>Constraints this has to satisfy.</strong> three.js is vendored into
+        <code>sandbox/vendor/</code> and imported through an import map — never from a CDN,
+        because the privacy page states that nothing is fetched from a third party. The library
+        is 2.1&nbsp;MB unminified, so on a real page it must load on demand, behind a poster and
+        an explicit action, never on page load.
+      </div>
+
+      <div class="bench">
+        <div class="cell">
+          <h3>Assembled</h3>
+          <div class="stage" id="s1"></div>
+          <div class="row">
+            <button class="btn btn-ghost" data-load="s1">Load 3D</button>
+            <label>explode <input type="range" min="0" max="100" value="0" data-ex="s1" disabled></label>
+          </div>
+          <p class="metrics" id="m1">not loaded</p>
+        </div>
+
+        <div class="cell">
+          <h3>Exploded, dark stage</h3>
+          <div class="stage dark" id="s2"></div>
+          <div class="row">
+            <button class="btn btn-ghost" data-load="s2">Load 3D</button>
+            <label>explode <input type="range" min="0" max="100" value="100" data-ex="s2" disabled></label>
+          </div>
+          <p class="metrics" id="m2">not loaded</p>
+        </div>
+
+        <div class="cell">
+          <h3>Current SVG, for comparison</h3>
+          <div class="stage" style="display:grid;place-items:center;padding:8px">
+            <img src="../assets/img/module-disc.svg" alt="" style="max-width:100%;height:auto">
+          </div>
+          <p class="note">
+            The SVG is the poster and the no-JS fallback. The 3D view has to beat this to earn
+            2.1&nbsp;MB, and has to degrade back to it cleanly when it cannot run.
+          </p>
+        </div>
+      </div>
+
+      <h2 style="margin-top:2em">Part labels exposed by the viewer</h2>
+      <p class="metrics" id="labels">load a viewer to populate</p>
+    </div>
+  </section>
+</main>
+
+<script type="importmap">
+{
+  "imports": {
+    "three": "./vendor/three.module.js",
+    "three/addons/": "./vendor/addons/"
+  }
+}
+</script>
+<script type="module">
+  import { mountViewer, webglAvailable } from './viewer.js';
+
+  const viewers = {};
+  document.querySelectorAll('[data-load]').forEach((btn) => {
+    btn.addEventListener('click', async () => {
+      const id = btn.dataset.load;
+      const el = document.getElementById(id);
+      const metrics = document.getElementById(id === 's1' ? 'm1' : 'm2');
+      if (!webglAvailable()) { metrics.textContent = 'WebGL unavailable — poster stays'; return; }
+      btn.disabled = true; btn.textContent = 'Loading…';
+      const t0 = performance.now();
+      const slider = document.querySelector(`[data-ex="${id}"]`);
+      const v = await mountViewer(el, {
+        exploded: Number(slider.value) / 100,
+        background: id === 's2' ? 0x10131c : null,
+      });
+      viewers[id] = v;
+      slider.disabled = false;
+      slider.addEventListener('input', () => v.setExploded(Number(slider.value) / 100));
+      const info = v.renderer.info;
+      metrics.textContent =
+        `ready in ${Math.round(performance.now() - t0)} ms\n` +
+        `draw calls ${info.render.calls} · triangles ${info.render.triangles}\n` +
+        `geometries ${info.memory.geometries} · textures ${info.memory.textures}`;
+      btn.textContent = 'Loaded';
+      document.getElementById('labels').textContent =
+        v.partLabels().map((p) => `${p.name.padEnd(10)} ${p.label}`).join('\n');
+    });
+  });
+  window.__viewers = viewers;
+</script>
+</body>
+</html>

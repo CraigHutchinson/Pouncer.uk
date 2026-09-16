@@ -50,6 +50,7 @@ jobs:
           # untracked local file can never reach the published site.
           git archive HEAD | tar -x -C _site
           rm -rf _site/.github
+          rm -rf _site/sandbox
           rm -f  _site/README.md _site/Claude.md
           echo "Publishing:"
           find _site -type f | sort
