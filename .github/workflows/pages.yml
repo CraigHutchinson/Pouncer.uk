@@ -30,8 +30,15 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      # enablement: true turns Pages on for the repository if it is not already,
+      # using the pages: write permission above, so a fresh clone of this
+      # repository deploys without a manual settings step. The CNAME file in the
+      # published artifact then claims pouncer.uk — which is the correct order:
+      # the repository claims the domain before any DNS points at GitHub.
       - name: Setup Pages
         uses: actions/configure-pages@v4
+        with:
+          enablement: true
 
       # README.md and Claude.md are for people working on the repository, not
       # for visitors. Without this step they would be served at /README.md and
