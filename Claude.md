@@ -141,6 +141,16 @@ were. The site says so explicitly, and that sentence stays.
 - The prey-composition chart's hues are a validated categorical palette. If you
   change them, re-validate rather than eyeballing, and keep the visible value
   labels — they satisfy the light-mode contrast relief rule.
+- **Product renders carry their own caveat.** The module images are concept
+  renders of hardware that does not exist yet, so the PRELIMINARY marker lives
+  *inside the SVG*, not in the surrounding HTML — an image gets screenshotted,
+  hotlinked and pasted into threads without its caption, and the claim has to
+  survive that. Any new product render needs the same marker, and all of them
+  get replaced by photographs once there is a real object to photograph.
+- **Design language: the object is a disc, built like a watch** — case, bezel,
+  dial, caseback. The renders are drawn as SVG so they stay sharp on any
+  display; keep it that way rather than reaching for a raster export or a WebGL
+  viewer, which would also break the no-third-party-scripts rule above.
 - **Nothing published may reveal repository-only material.** The deploy workflow
   excludes `README.md` and `Claude.md` and fails if any markdown file remains in
   the publish set. Extend that exclusion list when you add a repository

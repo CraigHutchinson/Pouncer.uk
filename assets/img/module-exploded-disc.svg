@@ -1,0 +1,159 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 920" role="img"
+     aria-label="Preliminary exploded view of the disc module: bezel and crystal, dial face, piezo sounder, circuit board carrying the accelerometer and microcontroller, coin cell, and the caseback that clips to the collar.">
+  <title>Inside the disc — preliminary exploded view</title>
+  <defs>
+    <linearGradient id="eCase" x1="0.1" y1="0" x2="0.9" y2="1">
+      <stop offset="0" stop-color="#f6f3ee"/><stop offset="1" stop-color="#a9a298"/>
+    </linearGradient>
+    <linearGradient id="eDial" x1="0.1" y1="0" x2="0.9" y2="1">
+      <stop offset="0" stop-color="#2a3450"/><stop offset="1" stop-color="#0c1120"/>
+    </linearGradient>
+    <linearGradient id="ePiezo" x1="0.1" y1="0" x2="0.9" y2="1">
+      <stop offset="0" stop-color="#ecd07a"/><stop offset="1" stop-color="#a8811c"/>
+    </linearGradient>
+    <linearGradient id="ePcb" x1="0.1" y1="0" x2="0.9" y2="1">
+      <stop offset="0" stop-color="#23744f"/><stop offset="1" stop-color="#0f4a30"/>
+    </linearGradient>
+    <linearGradient id="eCell" x1="0.1" y1="0" x2="0.9" y2="1">
+      <stop offset="0" stop-color="#e2e6ec"/><stop offset="1" stop-color="#8d949f"/>
+    </linearGradient>
+    <linearGradient id="eBack" x1="0.1" y1="0" x2="0.9" y2="1">
+      <stop offset="0" stop-color="#4a5573"/><stop offset="1" stop-color="#1b2136"/>
+    </linearGradient>
+  </defs>
+  <path d="M110 120 L110 750" stroke="#cdc8be" stroke-width="1.5" stroke-dasharray="5 7"/>
+  <path d="M490 120 L490 750" stroke="#cdc8be" stroke-width="1.5" stroke-dasharray="5 7"/>
+  <path d="M110 110 v16 a 190 72 0 0 0 380 0 v-16 z" fill="#000" opacity="0.30"/>
+  <path d="M110 110 v16 a 190 72 0 0 0 380 0 v-16 z" fill="url(#eCase)" opacity="0.75"/>
+  <ellipse cx="300" cy="110" rx="190" ry="72" fill="url(#eCase)"/>
+  <ellipse cx="300" cy="110" rx="164" ry="62" fill="#131a2c" opacity="0.5"/>
+  <g stroke="#ffffff" opacity="0.5">
+    <line x1="466.0" y1="110.0" x2="486.0" y2="110.0" stroke-width="1.2"/>
+    <line x1="465.4" y1="115.5" x2="485.3" y2="116.1" stroke-width="1.2"/>
+    <line x1="463.5" y1="120.9" x2="483.2" y2="122.2" stroke-width="1.2"/>
+    <line x1="460.3" y1="126.3" x2="479.7" y2="128.2" stroke-width="1.2"/>
+    <line x1="456.0" y1="131.5" x2="474.8" y2="134.1" stroke-width="1.2"/>
+    <line x1="450.4" y1="136.6" x2="468.6" y2="139.8" stroke-width="1.2"/>
+    <line x1="443.8" y1="141.5" x2="461.1" y2="145.2" stroke-width="1.2"/>
+    <line x1="436.0" y1="146.1" x2="452.4" y2="150.4" stroke-width="1.2"/>
+    <line x1="427.2" y1="150.5" x2="442.5" y2="155.3" stroke-width="1.2"/>
+    <line x1="417.4" y1="154.5" x2="431.5" y2="159.9" stroke-width="1.2"/>
+    <line x1="406.7" y1="158.3" x2="419.6" y2="164.0" stroke-width="1.2"/>
+    <line x1="395.2" y1="161.6" x2="406.7" y2="167.8" stroke-width="1.2"/>
+    <line x1="383.0" y1="164.6" x2="393.0" y2="171.1" stroke-width="1.2"/>
+    <line x1="370.2" y1="167.1" x2="378.6" y2="173.9" stroke-width="1.2"/>
+    <line x1="356.8" y1="169.2" x2="363.6" y2="176.2" stroke-width="1.2"/>
+    <line x1="343.0" y1="170.9" x2="348.1" y2="178.1" stroke-width="1.2"/>
+    <line x1="328.8" y1="172.0" x2="332.3" y2="179.4" stroke-width="1.2"/>
+    <line x1="314.5" y1="172.8" x2="316.2" y2="180.2" stroke-width="1.2"/>
+    <line x1="300.0" y1="173.0" x2="300.0" y2="180.5" stroke-width="1.2"/>
+    <line x1="285.5" y1="172.8" x2="283.8" y2="180.2" stroke-width="1.2"/>
+    <line x1="271.2" y1="172.0" x2="267.7" y2="179.4" stroke-width="1.2"/>
+    <line x1="257.0" y1="170.9" x2="251.9" y2="178.1" stroke-width="1.2"/>
+    <line x1="243.2" y1="169.2" x2="236.4" y2="176.2" stroke-width="1.2"/>
+    <line x1="229.8" y1="167.1" x2="221.4" y2="173.9" stroke-width="1.2"/>
+    <line x1="217.0" y1="164.6" x2="207.0" y2="171.1" stroke-width="1.2"/>
+    <line x1="204.8" y1="161.6" x2="193.3" y2="167.8" stroke-width="1.2"/>
+    <line x1="193.3" y1="158.3" x2="180.4" y2="164.0" stroke-width="1.2"/>
+    <line x1="182.6" y1="154.5" x2="168.5" y2="159.9" stroke-width="1.2"/>
+    <line x1="172.8" y1="150.5" x2="157.5" y2="155.3" stroke-width="1.2"/>
+    <line x1="164.0" y1="146.1" x2="147.6" y2="150.4" stroke-width="1.2"/>
+    <line x1="156.2" y1="141.5" x2="138.9" y2="145.3" stroke-width="1.2"/>
+    <line x1="149.6" y1="136.6" x2="131.4" y2="139.8" stroke-width="1.2"/>
+    <line x1="144.0" y1="131.5" x2="125.2" y2="134.1" stroke-width="1.2"/>
+    <line x1="139.7" y1="126.3" x2="120.3" y2="128.2" stroke-width="1.2"/>
+    <line x1="136.5" y1="120.9" x2="116.8" y2="122.2" stroke-width="1.2"/>
+    <line x1="134.6" y1="115.5" x2="114.7" y2="116.1" stroke-width="1.2"/>
+    <line x1="134.0" y1="110.0" x2="114.0" y2="110.0" stroke-width="1.2"/>
+    <line x1="134.6" y1="104.5" x2="114.7" y2="103.9" stroke-width="1.2"/>
+    <line x1="136.5" y1="99.1" x2="116.8" y2="97.8" stroke-width="1.2"/>
+    <line x1="139.7" y1="93.7" x2="120.3" y2="91.8" stroke-width="1.2"/>
+    <line x1="144.0" y1="88.5" x2="125.2" y2="85.9" stroke-width="1.2"/>
+    <line x1="149.6" y1="83.4" x2="131.4" y2="80.2" stroke-width="1.2"/>
+    <line x1="156.2" y1="78.5" x2="138.9" y2="74.8" stroke-width="1.2"/>
+    <line x1="164.0" y1="73.9" x2="147.6" y2="69.6" stroke-width="1.2"/>
+    <line x1="172.8" y1="69.5" x2="157.5" y2="64.7" stroke-width="1.2"/>
+    <line x1="182.6" y1="65.5" x2="168.5" y2="60.1" stroke-width="1.2"/>
+    <line x1="193.3" y1="61.7" x2="180.4" y2="56.0" stroke-width="1.2"/>
+    <line x1="204.8" y1="58.4" x2="193.3" y2="52.2" stroke-width="1.2"/>
+    <line x1="217.0" y1="55.4" x2="207.0" y2="48.9" stroke-width="1.2"/>
+    <line x1="229.8" y1="52.9" x2="221.4" y2="46.1" stroke-width="1.2"/>
+    <line x1="243.2" y1="50.8" x2="236.4" y2="43.8" stroke-width="1.2"/>
+    <line x1="257.0" y1="49.1" x2="251.9" y2="41.9" stroke-width="1.2"/>
+    <line x1="271.2" y1="48.0" x2="267.7" y2="40.6" stroke-width="1.2"/>
+    <line x1="285.5" y1="47.2" x2="283.8" y2="39.8" stroke-width="1.2"/>
+    <line x1="300.0" y1="47.0" x2="300.0" y2="39.5" stroke-width="1.2"/>
+    <line x1="314.5" y1="47.2" x2="316.2" y2="39.8" stroke-width="1.2"/>
+    <line x1="328.8" y1="48.0" x2="332.3" y2="40.6" stroke-width="1.2"/>
+    <line x1="343.0" y1="49.1" x2="348.1" y2="41.9" stroke-width="1.2"/>
+    <line x1="356.8" y1="50.8" x2="363.6" y2="43.8" stroke-width="1.2"/>
+    <line x1="370.2" y1="52.9" x2="378.6" y2="46.1" stroke-width="1.2"/>
+    <line x1="383.0" y1="55.4" x2="393.0" y2="48.9" stroke-width="1.2"/>
+    <line x1="395.2" y1="58.4" x2="406.7" y2="52.2" stroke-width="1.2"/>
+    <line x1="406.7" y1="61.7" x2="419.6" y2="56.0" stroke-width="1.2"/>
+    <line x1="417.4" y1="65.5" x2="431.5" y2="60.1" stroke-width="1.2"/>
+    <line x1="427.2" y1="69.5" x2="442.5" y2="64.7" stroke-width="1.2"/>
+    <line x1="436.0" y1="73.9" x2="452.4" y2="69.6" stroke-width="1.2"/>
+    <line x1="443.8" y1="78.5" x2="461.1" y2="74.8" stroke-width="1.2"/>
+    <line x1="450.4" y1="83.4" x2="468.6" y2="80.2" stroke-width="1.2"/>
+    <line x1="456.0" y1="88.5" x2="474.8" y2="85.9" stroke-width="1.2"/>
+    <line x1="460.3" y1="93.7" x2="479.7" y2="91.8" stroke-width="1.2"/>
+    <line x1="463.5" y1="99.1" x2="483.2" y2="97.8" stroke-width="1.2"/>
+    <line x1="465.4" y1="104.5" x2="485.3" y2="103.9" stroke-width="1.2"/>
+  </g>
+  <path d="M498 110 H 566" stroke="#b9b4aa" stroke-width="1.5" fill="none"/>
+  <text x="582" y="106" fill="#16181d" font-family="Georgia, 'Times New Roman', serif" font-size="22">Bezel &amp; crystal</text>
+  <text x="582" y="131" fill="#5a6071" font-family="system-ui, sans-serif" font-size="15">brushed case ring over the dial</text>
+  <path d="M110 234 v10 a 190 72 0 0 0 380 0 v-10 z" fill="#000" opacity="0.30"/>
+  <path d="M110 234 v10 a 190 72 0 0 0 380 0 v-10 z" fill="url(#eDial)" opacity="0.75"/>
+  <ellipse cx="300" cy="234" rx="190" ry="72" fill="url(#eDial)"/>
+  <circle cx="300" cy="204" r="13" fill="#e0992f"/>
+  <g fill="#7f8aa4" opacity="0.9">
+    <circle cx="258.0" cy="266.0" r="3.4"/>
+    <circle cx="272.0" cy="266.0" r="3.4"/>
+    <circle cx="286.0" cy="266.0" r="3.4"/>
+    <circle cx="300.0" cy="266.0" r="3.4"/>
+    <circle cx="314.0" cy="266.0" r="3.4"/>
+    <circle cx="328.0" cy="266.0" r="3.4"/>
+    <circle cx="342.0" cy="266.0" r="3.4"/>
+  </g>
+  <path d="M498 234 H 566" stroke="#b9b4aa" stroke-width="1.5" fill="none"/>
+  <text x="582" y="230" fill="#16181d" font-family="Georgia, 'Times New Roman', serif" font-size="22">Dial face</text>
+  <text x="582" y="255" fill="#5a6071" font-family="system-ui, sans-serif" font-size="15">amber alert lens, acoustic port</text>
+  <path d="M110 358 v12 a 190 72 0 0 0 380 0 v-12 z" fill="#000" opacity="0.30"/>
+  <path d="M110 358 v12 a 190 72 0 0 0 380 0 v-12 z" fill="url(#ePiezo)" opacity="0.75"/>
+  <ellipse cx="300" cy="358" rx="190" ry="72" fill="url(#ePiezo)"/>
+  <ellipse cx="300" cy="358" rx="126" ry="48" fill="#d9b23f" stroke="#a8811c" stroke-width="2"/>
+  <ellipse cx="300" cy="358" rx="26" ry="10" fill="#a8811c"/>
+  <path d="M498 358 H 566" stroke="#b9b4aa" stroke-width="1.5" fill="none"/>
+  <text x="582" y="354" fill="#16181d" font-family="Georgia, 'Times New Roman', serif" font-size="22">Piezo sounder</text>
+  <text x="582" y="379" fill="#5a6071" font-family="system-ui, sans-serif" font-size="15">aimed forward, shielded toward the cat</text>
+  <path d="M110 482 v14 a 190 72 0 0 0 380 0 v-14 z" fill="#000" opacity="0.30"/>
+  <path d="M110 482 v14 a 190 72 0 0 0 380 0 v-14 z" fill="url(#ePcb)" opacity="0.75"/>
+  <ellipse cx="300" cy="482" rx="190" ry="72" fill="url(#ePcb)"/>
+  <rect x="204" y="466" width="44" height="22" rx="3" fill="#20242b"/>
+  <rect x="318" y="476" width="34" height="18" rx="3" fill="#20242b"/>
+  <g fill="#d9b23f" opacity="0.9">
+    <rect x="270" y="496" width="70" height="3" rx="1.5"/>
+    <rect x="270" y="504" width="46" height="3" rx="1.5"/>
+  </g>
+  <path d="M498 482 H 566" stroke="#b9b4aa" stroke-width="1.5" fill="none"/>
+  <text x="582" y="478" fill="#16181d" font-family="Georgia, 'Times New Roman', serif" font-size="22">Board</text>
+  <text x="582" y="503" fill="#5a6071" font-family="system-ui, sans-serif" font-size="15">accelerometer at 100 Hz, MCU, event log</text>
+  <path d="M110 606 v20 a 190 72 0 0 0 380 0 v-20 z" fill="#000" opacity="0.30"/>
+  <path d="M110 606 v20 a 190 72 0 0 0 380 0 v-20 z" fill="url(#eCell)" opacity="0.75"/>
+  <ellipse cx="300" cy="606" rx="190" ry="72" fill="url(#eCell)"/>
+  <ellipse cx="300" cy="606" rx="116" ry="44" fill="#c9ced7" stroke="#9aa1ad" stroke-width="2"/>
+  <text x="300" y="612" fill="#6b7280" font-family="system-ui, sans-serif" font-size="17" letter-spacing="2" text-anchor="middle">CR20xx</text>
+  <path d="M498 606 H 566" stroke="#b9b4aa" stroke-width="1.5" fill="none"/>
+  <text x="582" y="602" fill="#16181d" font-family="Georgia, 'Times New Roman', serif" font-size="22">Coin cell</text>
+  <text x="582" y="627" fill="#5a6071" font-family="system-ui, sans-serif" font-size="15">user-replaceable, not sealed in</text>
+  <path d="M110 730 v16 a 190 72 0 0 0 380 0 v-16 z" fill="#000" opacity="0.30"/>
+  <path d="M110 730 v16 a 190 72 0 0 0 380 0 v-16 z" fill="url(#eBack)" opacity="0.75"/>
+  <ellipse cx="300" cy="730" rx="190" ry="72" fill="url(#eBack)"/>
+  <rect x="230" y="720" width="140" height="20" rx="10" fill="#6c789a" opacity="0.55"/>
+  <path d="M498 730 H 566" stroke="#b9b4aa" stroke-width="1.5" fill="none"/>
+  <text x="582" y="726" fill="#16181d" font-family="Georgia, 'Times New Roman', serif" font-size="22">Caseback</text>
+  <text x="582" y="751" fill="#5a6071" font-family="system-ui, sans-serif" font-size="15">clips to a standard quick-release strap</text>
+  <text x="40" y="884" fill="#b98f1e" font-family="system-ui, sans-serif" font-size="15" font-weight="700" letter-spacing="2.4">PRELIMINARY — INTERNAL LAYOUT NOT FINAL</text>
+</svg>

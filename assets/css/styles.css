@@ -16,6 +16,8 @@
   --radius: 14px;
   --wrap: 1120px;
   --font: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-display: ui-serif, Georgia, "Iowan Old Style", "Palatino Linotype", Palatino,
+                  "Times New Roman", serif;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -57,10 +59,17 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-h1, h2, h3 { line-height: 1.15; letter-spacing: -0.02em; margin: 0 0 .5em; }
-h1 { font-size: clamp(2.1rem, 5.4vw, 3.5rem); }
-h2 { font-size: clamp(1.6rem, 3.4vw, 2.3rem); }
-h3 { font-size: 1.12rem; letter-spacing: -0.01em; }
+h1, h2 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  line-height: 1.12;
+  letter-spacing: -0.012em;
+  margin: 0 0 .5em;
+}
+h1 { font-size: clamp(2.3rem, 5.8vw, 3.9rem); }
+h2 { font-size: clamp(1.7rem, 3.6vw, 2.5rem); }
+h3 { line-height: 1.25; letter-spacing: -0.005em; margin: 0 0 .5em;
+     font-size: 1.1rem; font-weight: 650; }
 p { margin: 0 0 1rem; }
 
 a { color: inherit; text-decoration-color: var(--accent); text-underline-offset: 3px; }
@@ -99,8 +108,9 @@ img { max-width: 100%; height: auto; }
 }
 
 .brand {
-  display: inline-flex; align-items: center; gap: 10px;
-  font-weight: 700; letter-spacing: -0.02em; font-size: 1.12rem;
+  display: inline-flex; align-items: center; gap: 11px;
+  font-family: var(--font-display); font-weight: 400;
+  letter-spacing: 0.06em; font-size: 1.18rem;
   text-decoration: none; margin-right: auto;
 }
 .brand-word { line-height: 1; }
@@ -148,7 +158,7 @@ img { max-width: 100%; height: auto; }
     radial-gradient(900px 420px at 78% 8%, var(--deep-soft), transparent 70%),
     var(--deep);
   color: var(--on-deep);
-  padding: clamp(48px, 8vw, 96px) 0 clamp(56px, 9vw, 104px);
+  padding: clamp(60px, 9vw, 124px) 0 clamp(68px, 10vw, 132px);
   border-bottom: 1px solid var(--line);
 }
 
@@ -158,8 +168,8 @@ img { max-width: 100%; height: auto; }
 }
 
 .eyebrow {
-  text-transform: uppercase; letter-spacing: .14em; font-size: .74rem;
-  font-weight: 700; color: var(--accent); margin-bottom: 14px;
+  text-transform: uppercase; letter-spacing: .2em; font-size: .72rem;
+  font-weight: 700; color: var(--accent); margin-bottom: 20px;
 }
 
 .hero h1 { color: var(--on-deep); max-width: 15ch; }
@@ -189,10 +199,10 @@ img { max-width: 100%; height: auto; }
 
 /* ---------- sections ---------- */
 
-.section { padding: clamp(48px, 7vw, 88px) 0; }
+.section { padding: clamp(56px, 8.5vw, 116px) 0; }
 /* Clear the sticky header when an anchor link lands on a section. */
 .section, .hero { scroll-margin-top: 72px; }
-.section-lede { color: var(--muted); max-width: 62ch; font-size: 1.04rem; }
+.section-lede { color: var(--muted); max-width: 60ch; font-size: 1.07rem; line-height: 1.7; }
 .section-problem, .section-updates { background: var(--surface-alt); }
 
 /* problem comparison */
@@ -469,7 +479,7 @@ img { max-width: 100%; height: auto; }
   background: var(--surface); border: 1px solid var(--accent);
   border-left: 4px solid var(--accent); border-radius: var(--radius);
 }
-.verdict h3 { font-size: 1.12rem; }
+.verdict h3 { font-family: var(--font-display); font-weight: 400; font-size: 1.32rem; }
 .verdict p { color: var(--muted); font-size: .97rem; }
 .verdict p:last-child { margin-bottom: 0; }
 .verdict-foot { padding-top: 14px; border-top: 1px solid var(--line); color: var(--text) !important; }
@@ -554,9 +564,17 @@ img { max-width: 100%; height: auto; }
 
 .section-product { background: var(--surface-alt); }
 
-.product-top {
-  display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
-  gap: clamp(20px, 4vw, 44px); align-items: center; margin-top: 30px;
+/* The render is the centrepiece, not a column item. */
+.product-stage {
+  display: flex; justify-content: center;
+  margin: clamp(24px, 4vw, 48px) 0 clamp(28px, 4vw, 52px);
+}
+.product-stage .product-figure { width: 100%; max-width: 560px; }
+
+.product-facts-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: clamp(22px, 3.5vw, 48px);
+  max-width: 880px; margin: 0 auto;
 }
 
 .product-figure { margin: 0; }
@@ -567,6 +585,7 @@ img { max-width: 100%; height: auto; }
   background: var(--surface); border: 1px solid var(--line);
   border-radius: var(--radius); padding: 20px;
 }
+.product-figure-wide figcaption { font-family: var(--font-display); font-size: .98rem; }
 .product-figure-wide figcaption {
   margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--line);
   color: var(--muted); font-size: .9rem;
@@ -579,9 +598,7 @@ img { max-width: 100%; height: auto; }
 
 .section-product .pillars { margin-top: 34px; }
 
-@media (max-width: 860px) {
-  .product-top { grid-template-columns: 1fr; }
-}
+
 
 /* The exploded diagram carries labelled callouts; below about 700px they would
    render too small to read, so the figure scrolls rather than shrinking. */
