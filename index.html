@@ -241,10 +241,19 @@
         with it.
       </p>
 
-      <div class="product-stage">
-        <figure class="product-figure">
-          <img src="assets/img/module-disc.svg" alt="Concept render of the Pouncer module: a disc-shaped tag on a natural-fibre collar strap, with a brushed bezel, sunburst dial, amber alert lens at the top and an acoustic port below." width="900" height="900" loading="lazy">
-        </figure>
+      <div class="module-track" data-module-track>
+        <div class="module-sticky">
+          <div class="module-stage" data-module-stage data-state="poster"
+               data-captions="Assembled — one disc on the collar|The bezel lifts off the case|Under the face: the sounder|The board, and the cell beneath it|Six parts, and the caseback that clips on">
+            <figure class="product-figure" data-stage-poster>
+              <img src="assets/img/module-disc.svg" alt="Concept render of the Pouncer module: a disc-shaped tag on a natural-fibre collar strap, with a machined bezel, turned face, amber alert lens and an acoustic port." width="900" height="900">
+            </figure>
+            <div class="module-canvas" data-stage-canvas></div>
+            <button class="btn btn-ghost module-load" type="button" data-stage-load>View in 3D</button>
+          </div>
+          <p class="module-caption" data-stage-caption aria-live="polite">Assembled — one disc on the collar</p>
+          <p class="module-hint">Scroll to take it apart</p>
+        </div>
       </div>
 
       <div class="product-facts-grid">
@@ -270,7 +279,7 @@
         </div>
       </div>
 
-      <figure class="product-figure product-figure-wide">
+      <figure class="product-figure product-figure-wide" id="exploded-diagram">
         <div class="figure-scroll">
           <img src="assets/img/module-exploded-disc.svg" alt="Exploded view of the disc: bezel and crystal, dial face, piezo sounder, board carrying the accelerometer and microcontroller, coin cell, and the caseback that clips to the collar." width="980" height="920" loading="lazy">
         </div>
@@ -656,5 +665,14 @@
 </footer>
 
 <script src="assets/js/main.js" defer></script>
+<script type="importmap">
+{
+  "imports": {
+    "three": "./assets/3d/vendor/three.module.js",
+    "three/addons/": "./assets/3d/vendor/addons/"
+  }
+}
+</script>
+<script type="module" src="assets/js/module-stage.js"></script>
 </body>
 </html>

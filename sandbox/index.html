@@ -84,13 +84,13 @@
 <script type="importmap">
 {
   "imports": {
-    "three": "./vendor/three.module.js",
-    "three/addons/": "./vendor/addons/"
+    "three": "../assets/3d/vendor/three.module.js",
+    "three/addons/": "../assets/3d/vendor/addons/"
   }
 }
 </script>
 <script type="module">
-  import { mountViewer, webglAvailable } from './viewer.js';
+  import { mountViewer, webglAvailable } from '../assets/3d/viewer.js';
 
   const viewers = {};
   document.querySelectorAll('[data-load]').forEach((btn) => {

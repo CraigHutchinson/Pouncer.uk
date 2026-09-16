@@ -147,10 +147,16 @@ were. The site says so explicitly, and that sentence stays.
   hotlinked and pasted into threads without its caption, and the claim has to
   survive that. Any new product render needs the same marker, and all of them
   get replaced by photographs once there is a real object to photograph.
-- **Design language: the object is a disc, built like a watch** — case, bezel,
+- **The 3D viewer is an enhancement with a hard budget.** `assets/3d/` carries a
+  vendored three.js (2.1 MB) and is imported through the import map in
+  `index.html`. It must never load on page load, never come from a CDN, and
+  never hold content that exists nowhere else. The SVG poster is what most
+  visitors see and is the only thing guaranteed to render: no JavaScript, no
+  WebGL, or reduced motion all stop at the poster, and nothing is lost.
+- **Design language: the object is a disc, machined, not a watch** — case, bezel,
   dial, caseback. The renders are drawn as SVG so they stay sharp on any
   display; keep it that way rather than reaching for a raster export or a WebGL
-  viewer, which would also break the no-third-party-scripts rule above.
+  viewer fetched from elsewhere.
 - **Nothing published may reveal repository-only material.** The deploy workflow
   excludes `README.md` and `Claude.md` and fails if any markdown file remains in
   the publish set. Extend that exclusion list when you add a repository

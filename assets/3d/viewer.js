@@ -3,7 +3,7 @@
  *
  * Designed to be dropped anywhere on the site:
  *
- *   import { mountViewer } from './viewer.js';
+ *   import { mountViewer } from '/assets/3d/viewer.js';
  *   const v = await mountViewer(el, { exploded: 0, autoRotate: true });
  *   v.setExploded(1);   v.dispose();
  *
@@ -58,12 +58,21 @@ export async function mountViewer(el, opts = {}) {
   const camera = new THREE.PerspectiveCamera(32, 1, 0.1, 100);
   camera.position.set(1.22, 0.58, 1.52);
 
-  const key = new THREE.DirectionalLight(0xffffff, 2.1);
-  key.position.set(-1.4, 2.2, 1.6);
+  // Studio rig: a broad key, a soft fill to keep the shadow side readable, and
+  // two rims to put a defined edge on the bezel, which is what sells machined
+  // metal. RoomEnvironment alone left everything flat.
+  const key = new THREE.DirectionalLight(0xfff6e8, 2.4);
+  key.position.set(-1.5, 2.4, 1.5);
   scene.add(key);
-  const rim = new THREE.DirectionalLight(0xbcd0ff, 0.9);
-  rim.position.set(1.8, 0.6, -1.9);
-  scene.add(rim);
+  const fill = new THREE.DirectionalLight(0xdfe8ff, 0.75);
+  fill.position.set(1.6, 0.9, 2.2);
+  scene.add(fill);
+  const rimA = new THREE.DirectionalLight(0xbcd0ff, 1.6);
+  rimA.position.set(2.0, 0.5, -1.9);
+  scene.add(rimA);
+  const rimB = new THREE.DirectionalLight(0xffd9a8, 1.1);
+  rimB.position.set(-1.9, 0.35, -1.7);
+  scene.add(rimB);
 
   const root = new THREE.Group();
   const module = buildModule();
@@ -83,8 +92,10 @@ export async function mountViewer(el, opts = {}) {
 
   let t = exploded;
   const parts = module.userData.parts;
-  const BASE = camera.position.clone().normalize();
   const BASE_DIST = camera.position.length();
+  const SPH = new THREE.Spherical();
+  const PHI_CLOSED = Math.acos(camera.position.y / BASE_DIST);   // low, product angle
+  const PHI_OPEN = PHI_CLOSED * 0.60;                            // higher, diagram angle
 
   function applyExplode() {
     // Ease so the stack settles rather than sliding linearly.
@@ -94,10 +105,16 @@ export async function mountViewer(el, opts = {}) {
     }
     strap.visible = t < 0.2;
     strap.position.y = -0.070 - e * 0.5;
-    // Pull the camera back as the stack spreads, so nothing leaves the frame.
-    const want = BASE_DIST * (1 + 0.88 * e);
-    const dir = camera.position.clone().sub(controls.target).normalize();
-    camera.position.copy(controls.target).add(dir.multiplyScalar(want));
+
+    // Rise and pull back as the stack spreads. A low angle flatters the
+    // assembled disc but foreshortens the gaps between layers, so the exploded
+    // end of the scrub is viewed from higher up where the separation reads.
+    // Azimuth is taken from wherever the visitor has dragged to, so orbiting
+    // still works while the scroll drives the rest.
+    SPH.setFromVector3(camera.position.clone().sub(controls.target));
+    SPH.phi = PHI_CLOSED + (PHI_OPEN - PHI_CLOSED) * e;
+    SPH.radius = BASE_DIST * (1 + 1.05 * e);
+    camera.position.copy(controls.target).add(new THREE.Vector3().setFromSpherical(SPH));
     controls.update();
   }
   applyExplode();

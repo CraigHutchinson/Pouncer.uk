@@ -176,6 +176,23 @@ dropped from the artifact — v3 excluded only `.git` and `.github`. If you bump
 that action again, check its `action.yml` for changes to that input before
 trusting the upgrade.
 
+## The 3D module viewer
+
+`assets/3d/` holds a vendored three.js and a small viewer the product section
+uses to take the module apart as you scroll. `sandbox/` is the bench for working
+on it and is excluded from the published site.
+
+Three rules keep it honest, and they are not negotiable:
+
+1. **It never loads on page load.** three.js is 2.1 MB; it is fetched only when
+   the stage nears the viewport, and not at all under `prefers-reduced-motion`,
+   where it waits for a button press instead.
+2. **It is vendored, never a CDN.** `privacy/` states that the site fetches
+   nothing from a third party. A CDN request would make that false.
+3. **It is an enhancement.** The SVG poster renders first and stays as the
+   fallback. No JavaScript, no WebGL, or reduced motion all end at the poster,
+   and no content lives only inside the canvas.
+
 ## Browser support
 
 Modern evergreen browsers. Layout uses CSS grid and `color-mix()`; the header

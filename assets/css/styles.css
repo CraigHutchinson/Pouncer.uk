@@ -631,3 +631,56 @@ img { max-width: 100%; height: auto; }
   margin: 0; color: var(--on-deep-muted);
   font-size: 1.02rem; max-width: 46ch;
 }
+
+/* ---------- scroll-driven module stage ---------- */
+
+/* The track is tall; the stage pins inside it, so scrolling the track length
+   is what drives the module apart. Height is in viewport units so the scrub
+   lasts about two screens regardless of device. */
+.module-track { height: 280vh; position: relative; margin: clamp(20px, 3vw, 36px) 0; }
+
+.module-sticky {
+  position: sticky; top: 0;
+  height: 100vh;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 10px;
+}
+
+.module-stage {
+  position: relative;
+  width: min(560px, 82vw);
+  aspect-ratio: 1 / 1;
+}
+.module-stage .product-figure,
+.module-canvas { position: absolute; inset: 0; }
+.module-canvas { opacity: 0; transition: opacity .5s ease; }
+
+.module-stage[data-state="live"] .product-figure { opacity: 0; pointer-events: none; }
+.module-stage[data-state="live"] .module-canvas { opacity: 1; }
+
+.module-load {
+  position: absolute; left: 50%; bottom: 4%; transform: translateX(-50%);
+  font-size: .86rem; padding: 8px 16px;
+}
+
+.module-caption {
+  margin: 0; color: var(--text); font-family: var(--font-display);
+  font-size: 1.05rem; text-align: center; min-height: 1.6em;
+}
+.module-hint {
+  margin: 0; color: var(--muted); font-size: .78rem;
+  text-transform: uppercase; letter-spacing: .16em;
+}
+.module-stage[data-state="live"] ~ .module-hint { opacity: .55; }
+
+/* No pinning where it would trap a short viewport, and no scrub prompt when
+   the visitor has asked for less motion. */
+@media (max-height: 560px) {
+  .module-track { height: auto; }
+  .module-sticky { position: static; height: auto; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .module-track { height: auto; }
+  .module-sticky { position: static; height: auto; }
+  .module-hint { display: none; }
+}
