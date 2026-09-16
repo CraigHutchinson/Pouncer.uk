@@ -17,7 +17,8 @@
   --wrap: 1120px;
   --font: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --cat: #253052;
-  --cat-shadow: #e2ded5;
+  --cat-prey: #5a6790;
+  --cat-disc: #b8761a;
   --font-display: ui-serif, Georgia, "Iowan Old Style", "Palatino Linotype", Palatino,
                   "Times New Roman", serif;
 }
@@ -36,8 +37,9 @@
     --accent-strong: #f5c274;
     --on-deep: #edeff4;
     --on-deep-muted: #9aa3b6;
-    --cat: #8892ab;
-    --cat-shadow: #222a38;
+    --cat: #9aa4bd;
+    --cat-prey: #77839e;
+    --cat-disc: #f0ac44;
   }
 }
 
@@ -233,20 +235,38 @@ img { max-width: 100%; height: auto; }
 
 /* Posture figures. They carry real information — what a stalk looks like
    against a launch — so they are inline SVG that inherits the theme rather
-   than flat images that would need a second file per colour scheme. */
+   than flat images that would need a second file per colour scheme.
+
+   Line art, not silhouette. The spine stroke IS the gesture, and the gesture
+   is what the accelerometer traces. It also matches the logo's own vocabulary:
+   an arc plus two ear marks, "the cat, reduced to two marks". An earlier pass
+   built these from filled primitives and landed in the uncanny middle —
+   neither realistic nor designed. */
 .cat-fig { display: block; width: 100%; max-width: 230px; height: auto; margin: 4px 0 10px; }
-.cat-body { fill: var(--cat); }
-.cat-limb { fill: none; stroke: var(--cat); stroke-linecap: round; }
-.cat-shadow { fill: var(--cat-shadow); }
-/* The disc is the product in the picture, so it has to separate from the
-   silhouette in BOTH themes. Measured: accent on the dark-mode body is only
-   1.58:1, so the disc carries a halo in the page colour instead of relying on
-   hue alone. */
-.cat-collar { fill: var(--accent); stroke: var(--bg); stroke-width: 2; }
-/* Cut in the page colour, not drawn in accent: accent on the dark-mode body
-   washes out (1.58:1), the page colour does not (6.11:1 dark, 12.39:1 light).
-   Without an eye the throat disc gets read as one. */
-.cat-eye { fill: var(--bg); }
+.cat-spine { fill: none; stroke: var(--cat); stroke-width: 6.5; stroke-linecap: round; }
+.cat-head  { fill: none; stroke: var(--cat); stroke-width: 6.5; stroke-linecap: round; }
+.cat-limb  { fill: none; stroke: var(--cat); stroke-width: 4.5; stroke-linecap: round; }
+.cat-ear   { fill: var(--cat); }
+/* Not --accent: on the light page that is 2.29:1, and in line art the disc
+   floats on bare background instead of sitting on a dark body. The deeper
+   amber gives 3.56:1 light; dark mode keeps the brighter accent at 9.69:1. */
+.cat-disc  { fill: var(--cat-disc); }
+.cat-ground { stroke: var(--line); stroke-width: 2; stroke-dasharray: 2 8; stroke-linecap: round; }
+/* The prey sits at a lighter weight than the cat on purpose: it is the thing
+   at risk, not the subject of the diagram. */
+.cat-prey { fill: none; stroke: var(--cat-prey); stroke-width: 2.6;
+            stroke-linecap: round; stroke-linejoin: round; }
+.cat-prey circle { fill: var(--cat-prey); stroke: none; }
+
+/* Prey key. The glyph replaces the colour chip, so shape and colour encode the
+   same three groups — redundant encoding, which survives colour-blindness
+   where a chip alone does not. */
+.key-glyph { width: 36px; height: 24px; fill: none; stroke: currentColor;
+             stroke-width: 3.4; stroke-linecap: round; stroke-linejoin: round; }
+.key-glyph-dot { fill: currentColor; stroke: none; }
+.key-glyph-1 { color: var(--series-1); }
+.key-glyph-2 { color: var(--series-2); }
+.key-glyph-3 { color: var(--series-3); }
 .step-num {
   display: inline-flex; align-items: center; justify-content: center;
   width: 28px; height: 28px; border-radius: 50%;
@@ -406,12 +426,8 @@ img { max-width: 100%; height: auto; }
   display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px 20px;
 }
 .viz-key li {
-  display: grid; grid-template-columns: 12px auto 1fr; gap: 4px 8px; align-items: center;
+  display: grid; grid-template-columns: 36px auto 1fr; gap: 4px 8px; align-items: center;
 }
-.swatch { width: 12px; height: 12px; border-radius: 3px; }
-.swatch-1 { background: var(--series-1); }
-.swatch-2 { background: var(--series-2); }
-.swatch-3 { background: var(--series-3); }
 .key-name { font-weight: 600; font-size: .95rem; }
 .key-value { font-variant-numeric: tabular-nums; font-weight: 700; font-size: .95rem; }
 .key-note { grid-column: 2 / -1; color: var(--muted); font-size: .85rem; }

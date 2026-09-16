@@ -153,31 +153,54 @@ stays.
 The four cats in "How it works" are **information, not decoration**: they show
 what a stalk looks like against a launch, which is the distinction the whole
 product rests on. Keep them tied to the four stages. If a stage's copy changes,
-the posture changes with it.
+the posture changes with it. A bird stands on the ground in stage 2 and is
+already up and away in stage 3, so the four frames read as one story.
+
+**They are line art, and they must stay line art.** The spine stroke *is* the
+gesture, and the gesture is what the accelerometer traces. This also matches the
+logo, whose own comment reads "the cat, reduced to two marks". An earlier pass
+built them from filled overlapping primitives, chasing realism, and landed in
+the uncanny middle: neither convincing nor designed. Do not go back to that.
+If a figure is not working, make it **more** abstract, not more detailed.
 
 They are **inline SVG**, not image files, for three reasons that are all
 load-bearing:
 
-- they inherit `--cat` / `--cat-shadow` and so work in both colour schemes from
-  one source, where flat images would need a file per scheme;
+- they inherit `--cat` / `--cat-prey` / `--cat-disc` and so work in both colour
+  schemes from one source, where flat images would need a file per scheme;
 - the site fetches nothing from a third party, and inline costs zero requests;
 - the repository stays free of binaries.
 
-Construction rules, so a fifth cat matches the four:
+Construction rules, so a fifth figure matches the four:
 
-- Built from **overlapping filled primitives** sharing one fill, never one
-  continuous outline path. Outlines drawn freehand come out as thin tubes.
-- Limbs are **stroked segments with round caps**, not rotated rectangles.
-  Rotated rects are hard to aim and went missing entirely in one draft.
-- Each cat wears the disc at the throat, in `--accent`, with a `--bg` halo.
-  Measured: accent on the dark-mode body is 1.58:1 and disappears; the halo
-  gives 6.11:1 dark and 12.39:1 light.
-- Each head carries an eye cut in `--bg`. Without one the throat disc reads as
-  the eye.
-- Ground shadows sit at roughly 1.3:1 on purpose. They are decorative and carry
-  no information — do not "fix" them to 3:1, it makes the figures look heavy.
+- A figure is a **spine**, a **head unit**, a few **limbs** and the **disc**.
+  The head unit is a short stroke with two ears rooted on it, splaying outward
+  — copy it from an existing figure rather than redrawing it.
+- Limbs are **stroked segments with round caps**. Rotated rectangles are
+  impossible to aim and went missing entirely in one draft.
+- Prey sits at a lighter weight (`--cat-prey`) than the cat. It is the thing at
+  risk, not the subject of the diagram.
+- Contrast is measured, not eyeballed. `--cat-disc` is deliberately *not*
+  `--accent`: accent on the light page is 2.29:1, and in line art the disc
+  floats on bare background rather than sitting on a dark body. The deeper
+  amber gives 3.56:1 light, and dark mode keeps the brighter accent at 9.69:1.
+- Everything must sit inside `viewBox="8 12 194 124"`. Two tails and a bird
+  were clipped by the frame edge before this was checked.
 - Every figure needs `role="img"`, `aria-labelledby` and a `<title>` describing
   the posture, because the posture is information the step text does not give.
+
+### The prey key
+
+The three glyphs in the prey chart replace what were plain colour chips, so
+shape and colour now encode the same three groups — redundant encoding, which
+survives colour-blindness where a chip alone does not.
+
+The glyph colours are the chart's own `--series-1/2/3` and **must stay exactly
+that**, because their job is to match the bar segment beside them. Do not
+"fix" the reptile green for contrast: at 2.70:1 on the page it is the same
+ratio the colour chip had, it is unchanged from the validated chart palette,
+and breaking the match to the bar would cost more than it buys. The shape is
+the primary identifier at that size.
 
 ## Tone and language
 

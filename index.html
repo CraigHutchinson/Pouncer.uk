@@ -94,17 +94,17 @@
         </div>
 
         <ul class="viz-key">
-          <li><span class="swatch swatch-1" aria-hidden="true"></span>
+          <li><svg class="key-glyph key-glyph-1" viewBox="0 0 60 40" aria-hidden="true"><path d="M8 28 C8 16 18 10 28 12 C38 14 44 20 44 28"/><circle class="key-glyph-dot" cx="17" cy="14" r="4"/><path d="M44 28 C52 28 55 22 52 17"/></svg>
             <span class="key-name">Mammals</span>
             <span class="key-value">57m</span>
             <span class="key-note">voles, shrews, wood mice</span>
           </li>
-          <li><span class="swatch swatch-2" aria-hidden="true"></span>
+          <li><svg class="key-glyph key-glyph-2" viewBox="0 0 60 40" aria-hidden="true"><path d="M6 24 q 10 -12 20 -2"/><path d="M26 22 q 10 -12 20 -2"/></svg>
             <span class="key-name">Birds</span>
             <span class="key-value">27m</span>
             <span class="key-note">at least 44 wild species</span>
           </li>
-          <li><span class="swatch swatch-3" aria-hidden="true"></span>
+          <li><svg class="key-glyph key-glyph-3" viewBox="0 0 60 40" aria-hidden="true"><path d="M10 26 C16 16 28 14 36 19 C44 24 50 22 52 16"/><path d="M18 22 L14 30"/><path d="M32 20 L34 30"/><circle class="key-glyph-dot" cx="12" cy="24" r="2.6"/></svg>
             <span class="key-name">Reptiles &amp; amphibians</span>
             <span class="key-value">5m</span>
             <span class="key-note">frogs, newts, slow-worms</span>
@@ -191,23 +191,19 @@
 
       <ol class="steps">
         <li class="step">
-          <svg class="cat-fig" viewBox="0 0 220 132" role="img" aria-labelledby="cat1t">
-            <title id="cat1t">A cat sitting upright, alert, tail curled round to the front</title>
-            <ellipse class="cat-shadow" cx="112" cy="118" rx="44" ry="4"/>
-            <g class="cat-body">
-              <ellipse cx="94" cy="100" rx="28" ry="19"/>
-              <ellipse cx="105" cy="84" rx="24" ry="25"/>
-              <ellipse cx="123" cy="88" rx="15" ry="27"/>
-              <ellipse cx="129" cy="65" rx="11" ry="14"/>
-              <path d="M124 35 L122 20 L132 28 Z"/>
-              <path d="M140 27 L151 15 L151 34 Z"/>
-              <circle cx="134" cy="45" r="16"/>
-              <ellipse cx="146" cy="51" rx="8" ry="7"/>
-            </g>
-            <path class="cat-limb" stroke-width="13" d="M129 92 L132 112"/>
-            <path class="cat-limb" stroke-width="11" d="M96 100 C60 108 64 124 94 121 C110 119 120 117 130 116"/>
-            <circle class="cat-eye" cx="140" cy="42" r="2.2"/>
-            <circle class="cat-collar" cx="137" cy="65" r="5"/>
+          <svg class="cat-fig" viewBox="8 12 194 124" role="img" aria-labelledby="cat1t">
+            <title id="cat1t">A cat sitting upright and alert, tail curled round to the front</title>
+            <line class="cat-ground" x1="14" y1="120" x2="196" y2="120"/>
+            <path class="cat-spine" d="M74 112 C64 84 82 60 110 58 L116 59"/>
+            <path class="cat-spine" d="M74 112 C94 116 104 114 112 112"/>
+            <path class="cat-limb" d="M112 74 L114 111"/>
+            <path class="cat-limb" d="M80 113 C60 118 68 128 94 124 C108 122 118 120 126 118"/>
+            <g transform="translate(113,57) rotate(-4)">
+                <path class="cat-head" d="M0 0 L15 1"/>
+                <path class="cat-ear" d="M-2 -2 L2 -15 L7 -4 Z"/>
+                <path class="cat-ear" d="M9 -4 L15 -15 L17 -2 Z"/>
+              </g>
+            <circle class="cat-disc" cx="118" cy="68" r="5.5"/>
           </svg>
           <span class="step-num">1</span>
           <h3>Observe</h3>
@@ -217,24 +213,27 @@
           </p>
         </li>
         <li class="step">
-          <svg class="cat-fig" viewBox="0 0 220 132" role="img" aria-labelledby="cat2t">
-            <title id="cat2t">The same cat crouched low and long, head forward, belly close to the ground</title>
-            <ellipse class="cat-shadow" cx="112" cy="118" rx="66" ry="4"/>
-            <path class="cat-limb" stroke-width="10" d="M70 91 C38 94 20 100 12 110"/>
-            <path class="cat-limb" stroke-width="12" d="M74 98 L70 112"/>
-            <path class="cat-limb" stroke-width="11" d="M148 100 L148 112"/>
-            <g class="cat-body">
-              <ellipse cx="72" cy="90" rx="25" ry="21"/>
-              <ellipse cx="110" cy="95" rx="44" ry="17"/>
-              <ellipse cx="148" cy="97" rx="21" ry="16"/>
-              <ellipse cx="168" cy="99" rx="13" ry="13"/>
-              <path d="M170 88 L167 73 L179 82 Z"/>
-              <path d="M186 82 L197 71 L197 88 Z"/>
-              <circle cx="179" cy="95" r="15"/>
-              <ellipse cx="191" cy="99" rx="8" ry="7"/>
+          <svg class="cat-fig" viewBox="8 12 194 124" role="img" aria-labelledby="cat2t">
+            <title id="cat2t">The same cat crouched low and long, head forward, a bird on the ground ahead of it</title>
+            <line class="cat-ground" x1="14" y1="120" x2="196" y2="120"/>
+            <g class="cat-prey">
+              <path d="M176 97 C167 100 165 110 173 114 C182 118 192 112 191 104 C190 98 183 94 176 97 Z"/>
+              <circle cx="173" cy="93" r="5.5"/>
+              <path d="M167 93 L160 95"/>
+              <path d="M190 105 L201 110"/>
+              <path d="M176 115 L176 120"/>
+              <path d="M184 115 L184 120"/>
             </g>
-            <circle class="cat-eye" cx="184" cy="92" r="2.2"/>
-            <circle class="cat-collar" cx="170" cy="108" r="5"/>
+            <path class="cat-limb" d="M48 90 C30 92 18 100 12 108"/>
+            <path class="cat-spine" d="M50 90 C74 102 106 106 136 98"/>
+            <path class="cat-limb" d="M70 104 L68 119"/>
+            <path class="cat-limb" d="M124 105 L125 119"/>
+            <g transform="translate(135,97) rotate(4)">
+                <path class="cat-head" d="M0 0 L15 1"/>
+                <path class="cat-ear" d="M-2 -2 L2 -15 L7 -4 Z"/>
+                <path class="cat-ear" d="M9 -4 L15 -15 L17 -2 Z"/>
+              </g>
+            <circle class="cat-disc" cx="140" cy="107" r="5.5"/>
           </svg>
           <span class="step-num">2</span>
           <h3>Stalk detected</h3>
@@ -244,28 +243,25 @@
           </p>
         </li>
         <li class="step">
-          <svg class="cat-fig" viewBox="0 0 220 132" role="img" aria-labelledby="cat3t">
-            <title id="cat3t">The cat mid-launch, body extended, forelegs reaching and hind legs stretched behind</title>
-            <ellipse class="cat-shadow" cx="122" cy="118" rx="32" ry="4"/>
-            <g transform="rotate(-20 110 74)">
-              <path class="cat-limb" stroke-width="10" d="M60 80 C32 78 14 68 6 54"/>
-              <path class="cat-limb" stroke-width="11" d="M70 84 L30 96"/>
-              <path class="cat-limb" stroke-width="10" d="M76 90 L44 110"/>
-              <path class="cat-limb" stroke-width="10" d="M148 74 L190 86"/>
-              <path class="cat-limb" stroke-width="9" d="M144 82 L180 102"/>
-              <g class="cat-body">
-                <ellipse cx="74" cy="78" rx="26" ry="20"/>
-                <ellipse cx="114" cy="76" rx="40" ry="19"/>
-                <ellipse cx="150" cy="72" rx="20" ry="17"/>
-                <ellipse cx="168" cy="68" rx="13" ry="13"/>
-                <path d="M170 56 L167 41 L179 50 Z"/>
-                <path d="M186 50 L197 39 L197 56 Z"/>
-                <circle cx="179" cy="63" r="15"/>
-                <ellipse cx="191" cy="67" rx="8" ry="7"/>
-              </g>
-              <circle class="cat-eye" cx="184" cy="60" r="2.2"/>
-            <circle class="cat-collar" cx="170" cy="77" r="5"/>
+          <svg class="cat-fig" viewBox="8 12 194 124" role="img" aria-labelledby="cat3t">
+            <title id="cat3t">The cat mid-launch along a rising arc, while the bird is already up and away</title>
+            <line class="cat-ground" x1="14" y1="120" x2="196" y2="120"/>
+            <g class="cat-prey">
+              <path d="M150 32 q 11 -13 22 -2"/>
+              <path d="M172 30 q 11 -13 22 -2"/>
             </g>
+            <path class="cat-limb" d="M42 98 C26 94 15 85 11 74"/>
+            <path class="cat-limb" d="M56 96 L28 110"/>
+            <path class="cat-limb" d="M68 92 L50 112"/>
+            <path class="cat-spine" d="M46 98 C76 94 96 70 130 58"/>
+            <path class="cat-limb" d="M114 74 L152 82"/>
+            <path class="cat-limb" d="M110 78 L140 96"/>
+            <g transform="translate(129,57) rotate(-16)">
+                <path class="cat-head" d="M0 0 L15 1"/>
+                <path class="cat-ear" d="M-2 -2 L2 -15 L7 -4 Z"/>
+                <path class="cat-ear" d="M9 -4 L15 -15 L17 -2 Z"/>
+              </g>
+            <circle class="cat-disc" cx="131" cy="68" r="5.5"/>
           </svg>
           <span class="step-num">3</span>
           <h3>Launch confirmed</h3>
@@ -275,23 +271,17 @@
           </p>
         </li>
         <li class="step">
-          <svg class="cat-fig" viewBox="0 0 220 132" role="img" aria-labelledby="cat4t">
-            <title id="cat4t">The cat settled back down, paws tucked, tail wrapped round to the front</title>
-            <ellipse class="cat-shadow" cx="112" cy="118" rx="52" ry="4"/>
-            <g class="cat-body">
-              <ellipse cx="100" cy="100" rx="42" ry="18"/>
-              <ellipse cx="78" cy="95" rx="26" ry="21"/>
-              <ellipse cx="133" cy="99" rx="21" ry="17"/>
-              <ellipse cx="145" cy="81" rx="12" ry="15"/>
-              <path d="M140 51 L136 35 L148 44 Z"/>
-              <path d="M156 44 L168 32 L167 52 Z"/>
-              <circle cx="150" cy="62" r="17"/>
-              <ellipse cx="163" cy="68" rx="8" ry="7"/>
-              <rect x="120" y="105" width="32" height="13" rx="6"/>
-            </g>
-            <path class="cat-limb" stroke-width="10" d="M84 106 C52 110 52 120 74 119 C96 118 112 116 124 114"/>
-            <circle class="cat-eye" cx="156" cy="59" r="2.2"/>
-            <circle class="cat-collar" cx="154" cy="82" r="5"/>
+          <svg class="cat-fig" viewBox="8 12 194 124" role="img" aria-labelledby="cat4t">
+            <title id="cat4t">The cat settled back down, compact, tail wrapped round to the front</title>
+            <line class="cat-ground" x1="14" y1="120" x2="196" y2="120"/>
+            <path class="cat-limb" d="M60 104 C42 108 46 120 72 117 C94 114 110 110 120 107"/>
+            <path class="cat-spine" d="M62 102 C66 80 92 72 120 80"/>
+            <g transform="translate(119,79) rotate(-2)">
+                <path class="cat-head" d="M0 0 L15 1"/>
+                <path class="cat-ear" d="M-2 -2 L2 -15 L7 -4 Z"/>
+                <path class="cat-ear" d="M9 -4 L15 -15 L17 -2 Z"/>
+              </g>
+            <circle class="cat-disc" cx="124" cy="90" r="5.5"/>
           </svg>
           <span class="step-num">4</span>
           <h3>Cooldown &amp; log</h3>
