@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Pouncer — The Smart Collar That Predicts the Pounce</title>
-<meta name="description" content="A collar module for cat owners who want the birds and small mammals in their garden to survive. Pouncer detects the stalk-and-launch signature and sounds one short cue at the moment of intent — silent the rest of the time.">
+<meta name="description" content="A collar module for cat owners who want the birds and small mammals in their garden to survive. Pouncer is being built to read the stalk-and-launch signature and sound one short cue at the moment of intent — silent the rest of the time.">
 <link rel="canonical" href="https://pouncer.uk/">
 <meta name="theme-color" content="#141a2e">
 
@@ -147,7 +147,7 @@
 
   <section class="section section-problem" id="problem">
     <div class="wrap">
-      <h2>A bell warns all day. A pounce takes a quarter of a second.</h2>
+      <h2>A bell rings all day. A cat learns to keep it quiet.</h2>
       <p class="section-lede">
         Your cat is not the problem. The tools are. Pouncer is built around the cat's instinct
         rather than against it — nothing to unlearn, nothing extra to carry.
@@ -157,9 +157,9 @@
         <article class="compare-card">
           <h3>Bell collars</h3>
           <p>
-            A bell is rung <em>by</em> the pounce, so it can never sound before one. It chimes all
-            day when it doesn't matter and arrives with the strike when it does — and cats learn a
-            gait that keeps it quiet anyway.
+            A bell rings during ordinary movement, so there is nothing about it that says
+            <em>now</em>. And it responds to gait, which a cat can quieten at no cost to the hunt.
+            In the one controlled trial to measure it, bells made no discernible difference.
           </p>
         </article>
         <article class="compare-card">
@@ -172,8 +172,8 @@
         <article class="compare-card compare-card-ours">
           <h3>Pouncer</h3>
           <p>
-            Silent until the exact second of intent. Inertial sensing recognises the pre-pounce
-            stalk-and-launch signature and fires one short cue — then goes quiet again.
+            Built to stay silent until the launch itself. Inertial sensing is being developed to
+            read the stalk-and-launch signature and fire one short cue — then go quiet again.
           </p>
         </article>
       </div>
@@ -184,8 +184,9 @@
     <div class="wrap">
       <h2>How it works</h2>
       <p class="section-lede">
-        A three-axis accelerometer samples at 100&nbsp;Hz. The classifier looks for a sequence,
-        not a single spike — which is what keeps play, jumping and a bumpy car ride silent.
+        This is the design, not a demonstration. A three-axis accelerometer samples at
+        100&nbsp;Hz, and the classifier is being built to look for a sequence rather than a single
+        spike — which is what should keep play, jumping and a bumpy car ride silent.
       </p>
 
       <ol class="steps">
@@ -293,15 +294,16 @@
         <article class="pillar">
           <h3>Predictive motion engine</h3>
           <p>
-            Tracks micro-movements to recognise the acceleration signature of a launch as it
-            begins, rather than reporting an impact after the fact.
+            Built to track micro-movements and recognise the acceleration signature of a launch
+            as it begins, rather than report an impact after the fact.
           </p>
         </article>
         <article class="pillar">
           <h3>Silent until it counts</h3>
           <p>
             No chiming while your cat eats, sleeps or walks. Hysteresis, dwell times and rate
-            limits exist specifically to keep nuisance alerts near zero.
+            limits are specified specifically to keep nuisance alerts near zero — and the collar
+            can be worn with alerts off entirely.
           </p>
         </article>
         <article class="pillar">
@@ -396,25 +398,33 @@
       </p>
 
       <div class="verdict">
-        <h3>Why the bell failed, and why that is the whole design brief</h3>
+        <h3>The bell row is the one we have to answer</h3>
         <p>
-          The bell row is the uncomfortable one, because a bell is the closest thing ever tested to
-          an acoustic collar alert. Its warning time is zero by construction, for the reason above:
-          the acceleration that rings it <em>is</em> the pounce. And a cat can beat it for free,
-          because a bell listens to gait rather than intent — which Pouncer's does not.
+          A bell is the closest thing ever tested to an acoustic collar alert, and it did nothing
+          measurable. We used to explain that away by saying a bell warns too late. That was our
+          argument, and it was wrong — badly enough that it is worth saying plainly here rather
+          than quietly deleting.
         </p>
         <p>
-          Zero is a long way short of enough. A startled bird takes roughly
-          <strong>80&nbsp;milliseconds just to begin reacting</strong> to a sound, and longer again
-          to get clear. That number is the entire product brief: read the launch far enough ahead of
-          contact to beat it, or make no sound at all.
+          A bell has no sensor and nothing to decide. The clapper moves the instant the cat does,
+          so a bell gets <strong>more</strong> warning time than any device that has to detect a
+          launch and confirm it first. On timing, a bell is the best case. Pouncer is necessarily
+          worse, because it spends real milliseconds thinking.
+        </p>
+        <p>
+          So why the bell failed is genuinely unknown — the trial was not built to answer it. Our
+          working hypothesis is about salience rather than timing: a bell rings during everything,
+          from every direction, so there is no reason for a bird to treat it as a threat. Pouncer
+          is silent until a launch, aimed forward, and fires rarely. Whether that is the difference
+          is a hypothesis, not a finding.
         </p>
         <p class="verdict-foot">
-          None of that is proof, and we are not going to dress it up as any. It is a reason the
-          bell result does not predict ours, and it is written into the engineering as a latency
-          budget we either hit or abandon the chirp. The trial settles the rest: alerts on versus
-          alerts off, outcomes by prey type, published either way. Meanwhile change the food and
-          play with your cat — that beats every collar ever tested, ours included, today.
+          What is not a hypothesis is the clock. A startled bird takes roughly
+          <strong>80&nbsp;milliseconds just to begin reacting</strong> to a sound, and longer again
+          to get clear — so the time we spend detecting and confirming comes straight out of the
+          animal's. That is written into the engineering as a budget: hit it, or log the event and
+          stay silent. The trial settles the rest, published either way. Meanwhile change the food
+          and play with your cat — that beats every collar ever tested, ours included, today.
         </p>
       </div>
     </div>
@@ -447,8 +457,8 @@
           <span class="status-tag status-tag-wip">In progress</span>
           <p>
             Warning lead time. Measuring how long a real pounce lasts and how fast the collar can
-            decide — because a cue that lands with the strike is just a bell. If we cannot beat the
-            clock, detection moves earlier into the stalk.
+            decide — because a cue that lands with the strike has warned nobody. If we cannot beat
+            the clock, the device logs the event and makes no sound.
           </p>
         </li>
         <li>
@@ -528,18 +538,19 @@
           species — bank voles, field voles, shrews and wood mice — rather than the commensal
           brown rats and house mice people picture as pests. Shrews in particular are protected
           under UK law and are frequently caught and left uneaten. Pouncer also cannot tell one
-          small mammal from another: it detects the pounce, not the prey.
+          small mammal from another: it is built to detect the pounce, not the prey.
         </p>
       </details>
 
       <details>
         <summary>My cat's bell never stopped anything. Why is this different?</summary>
         <p>
-          Because of when it sounds. A bell is rung by the pounce itself, so it cannot go off before
-          one — by the time it rings, the strike is already happening. And cats learn a gait that
-          keeps it silent, which costs them nothing. Pouncer watches for the launch motion, which is
-          the one thing a hunting cat cannot avoid doing. Whether that turns into fewer catches is
-          what our trial is measuring; we have not proven it yet, and we say so.
+          Honestly: it might not be. Nobody knows why bells fail, including us — the trial that
+          measured it was not designed to find out, and a bell is not slow, it is simply always
+          ringing. What we are betting on is that a cue which fires rarely, points forward and
+          responds to the launch itself — which a cat cannot suppress without abandoning the
+          pounce — is treated differently from a jingle that accompanies everything. That is a
+          bet. Our trial is what settles it, and we will publish it either way.
         </p>
       </details>
 

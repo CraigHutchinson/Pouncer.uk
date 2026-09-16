@@ -82,21 +82,41 @@ Both hurt conversion in the short term and are the reason the site is credible.
 The audience has been sold unproven wildlife gadgets before. Do not remove
 either to raise conversion.
 
-### The bell argument (approved, and the strongest thing the site says)
+### The bell argument (withdrawn — do not restore it)
 
-Use it, because it is a mechanical fact rather than a claim. **A bell is rung by
-the pounce**: the acceleration that makes it sound *is* the launch, so a bell
-cannot warn anything before the event that rings it. Its warning time is zero by
-construction. And a startled bird needs roughly 80 ms just to begin reacting.
+An earlier version of this site argued that a bell's warning time is "zero by
+construction" because the acceleration that rings it *is* the pounce. **That is
+wrong, and it is wrong in the direction that flatters us.** A bell has no
+detector and no confirmation window, so it spends essentially no time deciding:
+its lead time is approximately the whole launch-to-contact interval, which is
+the *largest* lead time any collar-mounted cue can have. Pouncer is necessarily
+worse on timing, because it must detect and confirm before it emits.
 
-**A bell is also the one thing a cat can beat for free.** Cats learn a gait that
-keeps a bell quiet at no cost, because a bell responds to gait rather than
-intent. Pouncer reads the launch itself, which a cat cannot suppress without
-abandoning the pounce.
+Never write, imply, or reinstate any of the following:
 
-Hard limit: this explains why the bell's null result **does not predict ours**.
-It is not evidence that Pouncer works and must never be written as though it
-were. The site says so explicitly, and that sentence stays.
+- that a bell warns "too late", "at the moment of contact", or "never";
+- that a cue landing with the strike is "just a bell";
+- any comparative timing claim between Pouncer and a bell. We have not measured
+  one.
+
+**What may be said.** Bells showed no discernible effect on prey brought home
+(Cecchetti et al. 2021). Why is unknown and the trial was not designed to answer
+it. The project's hypothesis is about *salience and evasion*, not timing: a bell
+rings during all movement and is omnidirectional, where Pouncer's cue is rare
+and aimed forward; and a bell responds to gait, which a cat can quieten at no
+cost, where Pouncer responds to the launch, which a cat cannot suppress without
+abandoning the pounce. Label that as a hypothesis every time.
+
+**The 80 ms figure is still load-bearing**, but as a budget on us, not as an
+argument against bells: a startled bird needs roughly 80 ms just to begin
+reacting, so detection and confirmation latency is taken directly from the
+animal. Where the budget cannot be met, the device logs the event and stays
+silent (ADR-0008). Moving the audio cue earlier into the stalk is **not** an
+available answer — ADR-0004 permits audio only after a confirmed launch.
+
+Hard limit: none of this is evidence that Pouncer works, and it must never be
+written as though it were. The site says so explicitly, and that sentence
+stays.
 
 ---
 
