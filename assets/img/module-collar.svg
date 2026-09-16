@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 104 760 356" role="img"
+     aria-label="Preliminary concept render: the Pouncer module mounted on a standard quick-release cat collar, seen at an angle.">
+  <title>Pouncer module on a quick-release collar — concept render</title>
+  <defs>
+    <linearGradient id="strapNear" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#4a5573"/>
+      <stop offset="0.45" stop-color="#39425e"/>
+      <stop offset="1" stop-color="#232b42"/>
+    </linearGradient>
+    <linearGradient id="strapFar" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2b3350"/>
+      <stop offset="1" stop-color="#1b2136"/>
+    </linearGradient>
+    <linearGradient id="shell" x1="0.1" y1="0" x2="0.9" y2="1">
+      <stop offset="0" stop-color="#f6f4f0"/>
+      <stop offset="0.5" stop-color="#e3e0d9"/>
+      <stop offset="1" stop-color="#c5c1b7"/>
+    </linearGradient>
+    <linearGradient id="shellTop" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#ebe8e1"/>
+    </linearGradient>
+    <linearGradient id="buckle" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8e97ad"/>
+      <stop offset="1" stop-color="#5b6379"/>
+    </linearGradient>
+    <radialGradient id="lens" cx="0.35" cy="0.3" r="0.8">
+      <stop offset="0" stop-color="#ffd694"/>
+      <stop offset="0.5" stop-color="#e0992f"/>
+      <stop offset="1" stop-color="#9c6512"/>
+    </radialGradient>
+    <radialGradient id="floor" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#000000" stop-opacity="0.20"/>
+      <stop offset="1" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- contact shadow -->
+  <ellipse cx="360" cy="404" rx="205" ry="34" fill="url(#floor)"/>
+
+  <!-- collar band: far side first, then the near side over it -->
+  <ellipse cx="360" cy="230" rx="196" ry="76" fill="none" stroke="url(#strapFar)" stroke-width="34"/>
+  <path d="M164 230 A 196 76 0 0 0 556 230" fill="none" stroke="url(#strapNear)"
+        stroke-width="34" stroke-linecap="butt"/>
+  <path d="M170 234 A 190 72 0 0 0 550 234" fill="none" stroke="#5e6982"
+        stroke-width="3" opacity="0.55"/>
+  <!-- stitching along the near strap -->
+  <path d="M178 244 A 188 70 0 0 0 542 244" fill="none" stroke="#707b99"
+        stroke-width="1.5" stroke-dasharray="5 7" opacity="0.7"/>
+  <path d="M178 268 A 188 70 0 0 0 542 268" fill="none" stroke="#707b99"
+        stroke-width="1.5" stroke-dasharray="5 7" opacity="0.45"/>
+
+  <!-- quick-release buckle on the near-left of the band -->
+  <g transform="translate(214 272) rotate(-24)">
+    <rect x="-34" y="-19" width="68" height="38" rx="9" fill="url(#buckle)"/>
+    <rect x="-24" y="-11" width="20" height="22" rx="4" fill="#38405a"/>
+    <rect x="6" y="-11" width="20" height="22" rx="4" fill="#38405a"/>
+  </g>
+
+  <!-- the module, seated on the near strap -->
+  <g transform="translate(360 292)">
+    <!-- side wall gives the body depth -->
+    <path d="M-74 -6 h148 a14 14 0 0 1 14 14 v10 a14 14 0 0 1 -14 14 h-148
+             a14 14 0 0 1 -14 -14 v-10 a14 14 0 0 1 14 -14 z" fill="#a9a59b"/>
+    <!-- main face -->
+    <rect x="-88" y="-44" width="176" height="52" rx="16" fill="url(#shell)"/>
+    <!-- top bevel -->
+    <rect x="-80" y="-40" width="160" height="15" rx="7" fill="url(#shellTop)" opacity="0.9"/>
+    <!-- LED lens -->
+    <circle cx="54" cy="-18" r="9" fill="url(#lens)"/>
+    <circle cx="51" cy="-21" r="2.6" fill="#fff8ec" opacity="0.85"/>
+    <!-- acoustic port -->
+    <g fill="#8d887d" opacity="0.85">
+      <circle cx="-69" cy="-18" r="2.3"/><circle cx="-60" cy="-18" r="2.3"/>
+      <circle cx="-64.5" cy="-25.5" r="2.3"/><circle cx="-55.5" cy="-25.5" r="2.3"/>
+      <circle cx="-64.5" cy="-10.5" r="2.3"/><circle cx="-55.5" cy="-10.5" r="2.3"/>
+    </g>
+    <!-- wordmark -->
+    <text x="-4" y="-13" fill="#6f6a60" font-family="system-ui, sans-serif"
+          font-size="12" font-weight="700" letter-spacing="2" text-anchor="middle">POUNCER</text>
+  </g>
+
+  <!-- callouts -->
+  <g stroke="#8d96ad" stroke-width="1.5" fill="none" stroke-dasharray="3 5">
+    <path d="M448 292 H596"/>
+    <path d="M214 300 L214 356 H352"/>
+    <path d="M360 186 V132 H470"/>
+  </g>
+  <g fill="#8d96ad" font-family="system-ui, sans-serif" font-size="14">
+    <text x="604" y="288">Module clips on</text>
+    <text x="604" y="306" font-size="12.5" opacity="0.8">outside the strap</text>
+    <text x="360" y="361">Your quick-release buckle, unchanged</text>
+    <text x="478" y="128">Strap you already own</text>
+  </g>
+
+  <!-- preliminary badge -->
+  <g transform="translate(24 410)">
+    <rect x="0" y="0" width="234" height="28" rx="14" fill="none" stroke="#e0992f" stroke-width="1.5"/>
+    <text x="117" y="19" fill="#e0992f" font-family="system-ui, sans-serif" font-size="11.5"
+          font-weight="700" letter-spacing="1.6" text-anchor="middle">PRELIMINARY CONCEPT RENDER</text>
+  </g>
+</svg>
