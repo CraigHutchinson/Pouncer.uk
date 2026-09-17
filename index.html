@@ -545,6 +545,24 @@
           </p>
         </li>
         <li>
+          <span class="status-tag status-tag-open">On the roadmap</span>
+          <p>
+            More platforms. Windows desktop is first and Android is next, with iOS and macOS
+            after them. The portable core carries no platform toolkit, so each one is a new front
+            end rather than a rewrite — which is why they are on the list at all, and why none of
+            them has a date.
+          </p>
+        </li>
+        <li>
+          <span class="status-tag status-tag-open">On the roadmap</span>
+          <p>
+            Finding a lost collar, and the cat wearing it, by letting the module advertise as a
+            Bluetooth&nbsp;LE beacon. Garden-sized range, not street-sized, and not Find My.
+            Optional, and only if the broadcast can be made unrecognisable to anyone but your own
+            phone.
+          </p>
+        </li>
+        <li>
           <span class="status-tag status-tag-open">Not yet claimed</span>
           <p>
             Any reduction in prey caught. Final alert frequency and level. Battery life. Those
@@ -667,14 +685,58 @@
           No. Pouncer records motion events, not position, and there is no GPS in the module.
           Events stay on the collar until you download them over Bluetooth&nbsp;LE.
         </p>
+        <p>
+          The beacon below does not change that. A beacon broadcasts "I am here" to anything
+          listening nearby; it never learns where <em>it</em> is, and nothing about your cat's
+          position is computed, stored or sent anywhere. Your phone estimates how close you are
+          from how strong the signal is. That is the whole mechanism.
+        </p>
       </details>
 
       <details>
-        <summary>Which phone or computer do I need?</summary>
+        <summary>If the collar comes off, can I find it? Can I find the cat?</summary>
         <p>
-          The first companion app targets one platform — Windows or Android — so it can ship
-          properly rather than half-working everywhere. The choice is announced with the
-          crowdfunding launch.
+          That is on the roadmap, and it is not in the first release. The module can advertise as
+          a <strong>Bluetooth&nbsp;LE beacon</strong>, so a phone in range can tell you whether you
+          are getting warmer or colder. It is a hotter-and-colder game, not a pin on a map.
+        </p>
+        <p>
+          Be clear about the limits, because this is the feature people most want to over-read.
+          The range is short — think the length of a garden rather than the length of a street —
+          and a hedge, a wall, a shed door or the cat's own body all cut it down further. We will
+          not print a range figure until we have measured one. It is good for a collar that came
+          off in the long grass, and for a cat that is somewhere in the house refusing to answer.
+          It is no help at all for a cat two streets away.
+        </p>
+        <p>
+          It is also <strong>not Apple's Find My, and not Google's Find My Device</strong>. Those
+          are separate accessory programmes with their own cryptography and certification, and
+          being a Bluetooth beacon does not put a device into either of them. If that ever changes
+          we will say so; until then, assume the only phone that can hear your collar is one you
+          are holding.
+        </p>
+        <p>
+          And a beacon that shouts a fixed identifier all day is a way to follow the person
+          carrying it. So: it will be optional, and we will not ship one whose broadcast can be
+          recognised by anyone except the phone it is paired with. If we cannot do that, we will
+          ship no beacon at all.
+        </p>
+      </details>
+
+      <details>
+        <summary>Which phone or computer do I need? Is there an iPhone app?</summary>
+        <p>
+          The first companion is <strong>Windows desktop</strong>, with <strong>Android</strong>
+          next. <strong>iOS and macOS are on the roadmap</strong> — later than the other two, but
+          on it. iPhone owners are not being designed out; they are being asked to wait, and we
+          would rather say that plainly than leave it unsaid.
+        </p>
+        <p>
+          The reason is that one platform shipped properly beats four that half work. The portable
+          core — the event format, the protocol, the pounce analysis — is deliberately written
+          without any platform toolkit in it, so adding a platform is a new front end rather than
+          a rewrite. That is a design decision made now, for a version that comes later. It is not
+          a release date, and we will not give one until it is real.
         </p>
       </details>
 

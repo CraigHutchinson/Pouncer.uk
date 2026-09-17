@@ -52,11 +52,15 @@ making that claim until a controlled trial supports it.
   people" is not available as a claim;
 - battery life, range, weight or waterproof ratings as measured facts. They are
   design commitments until verified, and must be worded as commitments;
-- Find My or Find My Device compatibility. iBeacon advertising is not a route
-  into either network;
-- a shipping date, a price, or a committed companion platform beyond "Windows or
-  Android". When pricing does appear it is always qualified as an estimate
-  (`~£XX (estimated)`) until manufacturing volumes fix it.
+- Find My or Find My Device compatibility. Those are separate accessory
+  programmes with their own cryptography and certification; **BLE beacon
+  advertising is not a route into either network**, and no wording may imply it
+  is;
+- a beacon range figure, or any wording that turns the beacon into a tracker.
+  See "The beacon and the platform roadmap" below;
+- a shipping date, a price, or a **committed** companion platform. When pricing
+  does appear it is always qualified as an estimate (`~£XX (estimated)`) until
+  manufacturing volumes fix it.
 
 **Every figure on the site is attributed** in the "Where these numbers come
 from" section. If a number cannot be attributed, it does not go on the page. Do
@@ -147,6 +151,40 @@ written as though it were. The site says so explicitly, and that sentence
 stays.
 
 ---
+
+### The beacon and the platform roadmap
+
+Two roadmap items are easy to overstate, and both have copy on the site that is
+deliberately worded to stop that happening.
+
+**Platforms.** The order is Windows desktop, then Android, then iOS and macOS.
+iOS must never be written as excluded or unsupported — it is late, not absent,
+and "iPhone owners are being asked to wait" is the framing. Equally it must
+never be given a date or called committed. The reason it is on the roadmap at
+all is architectural and worth keeping in the copy: the portable core carries no
+platform toolkit, so a platform is a new front end rather than a rewrite. This
+matches ADR-0003 (macOS, iOS, beaconing and Find My are stretch tracks) and
+`architecture.md` (Windows first, Android follows, macOS/iOS later targets). If
+those change, this changes with them.
+
+**The beacon.** The module can advertise as a BLE beacon so a phone in range can
+play hotter-and-colder toward a lost collar, and the cat wearing it. Four things
+travel with that claim, permanently:
+
+1. **It is proximity, not position.** The device never learns where it is.
+   Signal strength is the only input. This is what keeps "no GPS, no location
+   tracking" true elsewhere on the page, so the two must stay consistent — if
+   the beacon copy ever implies a location is computed, the product-facts bullet
+   becomes a lie.
+2. **Garden-sized, not street-sized**, and no number until one is measured.
+   Range is a measurement like battery life and weight, and the same rule
+   applies.
+3. **Not Find My, not Find My Device.** State it explicitly rather than leaving
+   a reader to assume it.
+4. **A fixed broadcast identifier is a way to follow a person.** The site
+   commits to the beacon being optional and to no beacon at all unless the
+   broadcast can be made unrecognisable to anyone but the paired phone. Do not
+   soften or drop that sentence to make the feature sound better.
 
 ### The posture figures (How it works)
 
