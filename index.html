@@ -19,7 +19,7 @@
 
 <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/css/styles.css">
-<noscript><style>.nav-toggle{display:none}.site-nav{display:flex}</style></noscript>
+<noscript><style>.nav-toggle,.module-load{display:none}.site-nav{display:flex}</style></noscript>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -37,7 +37,6 @@
     </button>
 
     <nav id="site-nav" class="site-nav" aria-label="Primary">
-      <a href="#why">Why it matters</a>
       <a href="#how">How it works</a>
       <a href="#product">The module</a>
       <a href="#evidence">The evidence</a>
@@ -75,100 +74,25 @@
     </div>
   </section>
 
-  <section class="section nature-story" aria-labelledby="nature-heading">
-    <div class="wrap">
-      <p class="eyebrow">Nature lives next door</p>
-      <h2 id="nature-heading">A little more room for nature.</h2>
-      <p class="section-lede">For the familiar faces in your garden, and the little lives you rarely see.</p>
+  <section class="section nature-story" id="why" aria-labelledby="nature-heading">
+    <div class="wrap nature-inner">
+      <div class="nature-copy">
+        <p class="eyebrow">Nature lives next door</p>
+        <h2 id="nature-heading">A little more room for nature.</h2>
+        <p>For garden birds, wood mice and the little lives you rarely see. A shared space for the cat you love and the wildlife you care about.</p>
+        <a class="text-link" href="#evidence">The evidence behind the idea <span aria-hidden="true">↗</span></a>
+      </div>
       <div class="nature-grid">
-<figure><img src="assets/img/robin.webp" alt="A robin perched on a mossy branch" width="545" height="941" loading="lazy"><figcaption><h3>Garden birds</h3><p>The visitors that bring your garden to life.</p></figcaption></figure><figure><img src="assets/img/wood-mouse.webp" alt="A wood mouse beside a mossy log" width="545" height="941" loading="lazy"><figcaption><h3>Small mammals</h3><p>Wood mice, voles and shrews share these spaces too.</p></figcaption></figure><figure><img src="assets/img/garden.webp" alt="A cottage garden path edged with grasses and flowers" width="545" height="941" loading="lazy"><figcaption><h3>Shared spaces</h3><p>A place to love your cat and care about wildlife.</p></figcaption></figure>
+        <figure><img src="assets/img/robin.webp" alt="A robin perched on a mossy branch" width="545" height="941" loading="lazy"><figcaption>Garden birds</figcaption></figure>
+        <figure><img src="assets/img/wood-mouse.webp" alt="A wood mouse beside a mossy log" width="545" height="941" loading="lazy"><figcaption>Small mammals</figcaption></figure>
+        <figure><img src="assets/img/garden.webp" alt="A cottage garden path edged with grasses and flowers" width="545" height="941" loading="lazy"><figcaption>Shared spaces</figcaption></figure>
       </div>
-    </div>
-  </section>
-
-  <section class="section section-why" id="why">
-    <div class="wrap">
-      <h2>One British spring and summer, seen from the garden</h2>
-      <p class="section-lede">
-        A survey of nearly a thousand cats, scaled to the national population, put the number of
-        prey items brought home between April and August at around 92&nbsp;million. Not a
-        statistic about cats — a count of individual animals that lived in gardens like yours.
-      </p>
-
-      <figure class="viz viz-root">
-        <figcaption class="viz-title">Prey brought home by British cats, April–August</figcaption>
-
-        <div class="bar" role="img"
-             aria-label="Of roughly 92 million prey items brought home, 57 million were mammals, 27 million were birds and 5 million were reptiles and amphibians; the remainder were unidentified.">
-          <span class="bar-seg bar-seg-1" style="flex-grow: 57"></span>
-          <span class="bar-seg bar-seg-2" style="flex-grow: 27"></span>
-          <span class="bar-seg bar-seg-3" style="flex-grow: 5"></span>
-        </div>
-
-        <ul class="viz-key">
-          <li><svg class="key-glyph key-glyph-1" viewBox="0 0 60 40" aria-hidden="true"><path d="M8 28 C8 16 18 10 28 12 C38 14 44 20 44 28"/><circle class="key-glyph-dot" cx="17" cy="14" r="4"/><path d="M44 28 C52 28 55 22 52 17"/></svg>
-            <span class="key-name">Mammals</span>
-            <span class="key-value">57m</span>
-            <span class="key-note">voles, shrews, wood mice</span>
-          </li>
-          <li><svg class="key-glyph key-glyph-2" viewBox="0 0 60 40" aria-hidden="true"><path d="M6 24 q 10 -12 20 -2"/><path d="M26 22 q 10 -12 20 -2"/></svg>
-            <span class="key-name">Birds</span>
-            <span class="key-value">27m</span>
-            <span class="key-note">at least 44 wild species</span>
-          </li>
-          <li><svg class="key-glyph key-glyph-3" viewBox="0 0 60 40" aria-hidden="true"><path d="M10 26 C16 16 28 14 36 19 C44 24 50 22 52 16"/><path d="M18 22 L14 30"/><path d="M32 20 L34 30"/><circle class="key-glyph-dot" cx="12" cy="24" r="2.6"/></svg>
-            <span class="key-name">Reptiles &amp; amphibians</span>
-            <span class="key-value">5m</span>
-            <span class="key-note">frogs, newts, slow-worms</span>
-          </li>
-        </ul>
-
-        <p class="viz-note">
-          Woods, McDonald &amp; Harris (2003), <i>Mammal Review</i>. The three groups shown account
-          for 89&nbsp;million of roughly 92&nbsp;million items.
-        </p>
-      </figure>
-
-      <div class="why-notes">
-        <article class="note-card">
-          <h3>Mammals are most of it</h3>
-          <p>
-            Songbirds get the attention, but small mammals are the larger share. Voles, shrews and
-            wood mice are native wildlife, not vermin — so Pouncer is built for the low, flat
-            pounce as much as the strike upward at a bird.
-          </p>
-        </article>
-        <article class="note-card">
-          <h3>"Brought home" is the floor</h3>
-          <p>
-            These counts only include what a cat carried back through the door. Prey eaten or left
-            outside is never counted, so the real figure is higher — nobody knows by how much.
-          </p>
-        </article>
-        <article class="note-card">
-          <h3>Your cat is not the villain</h3>
-          <p>
-            The RSPB's position is that there is no clear evidence this mortality is driving UK
-            bird populations down. We are not arguing from collapse. We are arguing for the
-            individual animals in one garden, and for owners who would rather they lived.
-          </p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="section section-problem" id="problem">
-    <div class="wrap narrow">
-      <p class="eyebrow">An idea worth testing</p>
-      <h2>A warning shaped around movement.</h2>
-      <p class="section-lede">Your cat follows its instincts. Pouncer is being developed to recognise the subtle movement sequence around a pounce and use it to decide when to give a short warning cue.</p>
-      <p class="section-lede">The aim is selective sound, with ordinary activity left quiet. Whether that gives wildlife a useful chance to react is what testing must establish.</p>
     </div>
   </section>
 
   <section class="section section-how" id="how">
     <div class="wrap">
-      <p class="eyebrow">A calmer approach</p><h2>Quiet by design.</h2>
+      <p class="eyebrow">The idea, in four movements</p><h2>Quiet by design.</h2>
       <p class="section-lede">
         Observe. Recognise the stalk. Confirm the launch. Then settle. Pouncer is being designed
         to read a sequence of movements, rather than react to every jump or playful tumble.
@@ -215,9 +139,7 @@
 
       <p class="callout">
         <strong>Design intent, not a demonstrated outcome.</strong> The classifier is still in development.
-        A three-axis accelerometer samples at 100&nbsp;Hz. <strong>Ten-second windows:</strong> Each event stores five seconds either side of the
-        trigger on the device, then offloads over Bluetooth&nbsp;LE to the companion app so you
-        can see what your cat actually did.
+        Testing must establish whether the cue gives wildlife a useful chance to react. <a href="#status">Follow the development</a>.
       </p>
     </div>
   </section>
@@ -225,13 +147,9 @@
   <section class="section section-product" id="product">
     <div class="wrap">
       <p class="eyebrow">Considered in every detail</p><h2>A small module. A thoughtful design.</h2>
-      <p class="section-lede">
-        A single machined disc on the collar your cat already wears. It has no screen and nothing
-        to read — the whole face is there to hold a lens, a sounder and a seal. Built to the
-        tolerances of something worn every day, outdoors, by an animal who will not be careful
-        with it.
-      </p>
+      <p class="section-lede">A small disc for the quick-release collar your cat already wears. Designed for everyday adventures, with a replaceable cell and your cat’s motion records kept on your own device.</p>
 
+      <div class="product-overview">
       <div class="module-track" data-module-track>
         <div class="module-sticky">
           <div class="module-stage" data-module-stage data-state="poster"
@@ -243,7 +161,7 @@
             <button class="btn btn-ghost module-load" type="button" data-stage-load>View in 3D</button>
           </div>
           <p class="module-caption" data-stage-caption aria-live="polite">Assembled — one disc on the collar</p>
-          <p class="module-hint">Scroll to take it apart</p>
+          <div class="module-controls" hidden><label for="module-explode">Explore the layers</label><input id="module-explode" data-stage-explode type="range" min="0" max="1" step="0.01" value="0"><span>Assembled → Exploded</span></div>
         </div>
       </div>
 
@@ -270,6 +188,9 @@
         </div>
       </div>
 
+      </div>
+
+      <details class="design-details"><summary>Look inside the concept</summary>
       <figure class="product-figure product-figure-wide" id="exploded-diagram">
         <div class="figure-scroll">
           <img src="assets/img/module-exploded-disc.svg" alt="Exploded view of the disc: bezel and crystal, dial face, piezo sounder, board carrying the accelerometer and microcontroller, coin cell, and the caseback that clips to the collar." width="980" height="920" loading="lazy">
@@ -280,47 +201,11 @@
         </figcaption>
       </figure>
 
-      <div class="pillars">
-        <article class="pillar">
-          <h3>Predictive motion engine</h3>
-          <p>
-            Built to track micro-movements and recognise the acceleration signature of a launch
-            as it begins, rather than report an impact after the fact.
-          </p>
-        </article>
-        <article class="pillar">
-          <h3>Silent until it counts</h3>
-          <p>
-            No chiming while your cat eats, sleeps or walks. Hysteresis, dwell times and rate
-            limits are specified specifically to keep nuisance alerts near zero — and the collar
-            can be worn with alerts off entirely.
-          </p>
-        </article>
-        <article class="pillar">
-          <h3>Built to keep, not to replace</h3>
-          <p>
-            A serviceable module rather than a sealed one, on the collar you already own — so
-            buying Pouncer does not mean throwing working equipment away.
-          </p>
-        </article>
-      </div>
 
+      </details>
       <p class="fineprint">
-        Both images are preliminary concept renders produced for this page. They show intent,
-        proportion and arrangement — not finished hardware. The case, the finish, the materials and
-        the internal layout are all still moving, and the renders will be replaced by photographs
-        of a real object the moment there is one worth photographing.
+        These are preliminary concept renders, not finished hardware. Materials, dimensions and internal layout are still being developed.
       </p>
-    </div>
-  </section>
-
-  <section class="cta-band">
-    <div class="wrap narrow cta-band-inner">
-      <p>
-        That is the object. The list is how you hear when it ships — and when the trial reports,
-        whichever way it goes.
-      </p>
-      <a class="btn btn-primary" href="preorder/">Join the list</a>
     </div>
   </section>
 
@@ -393,11 +278,44 @@
         <p>A mechanical bell responds to movement; it does not classify behaviour. Pouncer is being developed to recognise a stalk-and-launch sequence and trigger a brief cue. That difference is a design hypothesis, not evidence of better timing or fewer animals caught.</p>
         <p class="verdict-foot">Pouncer's detection timing, false alerts, cat welfare and wildlife outcomes all need testing.</p>
       </div>
+      <details class="research-details"><summary>Why birds and small mammals? The UK research</summary><p>A 2003 study estimated roughly 92 million prey items brought home by British cats between April and August. These are historical estimates of prey returned, not a measure of current population decline. The RSPB finds no clear evidence that cat predation drives UK bird declines.</p><figure class="viz viz-root">
+        <figcaption class="viz-title">Prey brought home by British cats, April–August</figcaption>
+
+        <div class="bar" role="img"
+             aria-label="Of roughly 92 million prey items brought home, 57 million were mammals, 27 million were birds and 5 million were reptiles and amphibians; the remainder were unidentified.">
+          <span class="bar-seg bar-seg-1" style="flex-grow: 57"></span>
+          <span class="bar-seg bar-seg-2" style="flex-grow: 27"></span>
+          <span class="bar-seg bar-seg-3" style="flex-grow: 5"></span>
+        </div>
+
+        <ul class="viz-key">
+          <li><svg class="key-glyph key-glyph-1" viewBox="0 0 60 40" aria-hidden="true"><path d="M8 28 C8 16 18 10 28 12 C38 14 44 20 44 28"/><circle class="key-glyph-dot" cx="17" cy="14" r="4"/><path d="M44 28 C52 28 55 22 52 17"/></svg>
+            <span class="key-name">Mammals</span>
+            <span class="key-value">57m</span>
+            <span class="key-note">voles, shrews, wood mice</span>
+          </li>
+          <li><svg class="key-glyph key-glyph-2" viewBox="0 0 60 40" aria-hidden="true"><path d="M6 24 q 10 -12 20 -2"/><path d="M26 22 q 10 -12 20 -2"/></svg>
+            <span class="key-name">Birds</span>
+            <span class="key-value">27m</span>
+            <span class="key-note">at least 44 wild species</span>
+          </li>
+          <li><svg class="key-glyph key-glyph-3" viewBox="0 0 60 40" aria-hidden="true"><path d="M10 26 C16 16 28 14 36 19 C44 24 50 22 52 16"/><path d="M18 22 L14 30"/><path d="M32 20 L34 30"/><circle class="key-glyph-dot" cx="12" cy="24" r="2.6"/></svg>
+            <span class="key-name">Reptiles &amp; amphibians</span>
+            <span class="key-value">5m</span>
+            <span class="key-note">frogs, newts, slow-worms</span>
+          </li>
+        </ul>
+
+        <p class="viz-note">
+          Woods, McDonald &amp; Harris (2003), <i>Mammal Review</i>. The three groups shown account
+          for 89&nbsp;million of roughly 92&nbsp;million items.
+        </p>
+      </figure></details>
     </div>
   </section>
 
   <section class="section section-status" id="status">
-    <div class="wrap narrow">
+    <div class="wrap">
       <h2>Where Pouncer actually is</h2>
       <p class="section-lede">
         We would rather be trusted than hyped. Pouncer is a working engineering programme, not a
@@ -471,32 +389,6 @@
         Pouncer is designed to give wildlife a warning, not to guarantee an outcome. It is a
         complement to diet, play and supervised outdoor time, not a substitute for them, and
         nothing here is veterinary advice.
-      </p>
-    </div>
-  </section>
-
-  <section class="section section-updates" id="updates">
-    <div class="updates-photo"><img src="assets/img/resting-cat-1280.webp" srcset="assets/img/resting-cat-640.webp 640w, assets/img/resting-cat-1280.webp 1280w" sizes="(max-width: 880px) 100vw, 50vw" width="1280" height="720" loading="lazy" alt="A relaxed tabby resting on a garden bench"></div>
-    <div class="wrap narrow">
-      <h2>Be part of what comes next.</h2>
-      <p class="section-lede">
-        We are heading for a crowdfunding launch. Leave an address for build updates, field-test
-        results — including the ones that go against us — and early-backer access.
-      </p>
-
-      <form class="signup" id="signup-form" data-endpoint="" novalidate>
-        <label class="sr-only" for="email">Email address</label>
-        <input id="email" name="email" type="email" inputmode="email" autocomplete="email"
-               placeholder="you@example.com" required>
-        <button class="btn btn-primary" type="submit">Keep me posted</button>
-        <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
-      </form>
-
-      <p class="fineprint">
-        This opens your email app so you can send a signup request. You can also <a href="mailto:hello@pouncer.uk?subject=Pouncer%20launch%20updates">email us directly</a>. One list, low volume, unsubscribe any time. No payment is taken and nothing is binding —
-        <a href="preorder/">what joining the list does and does not mean</a>, and
-        <a href="privacy/">what we do with your address</a>. Follow along at
-        <a href="https://twitter.com/PouncerTag" rel="noopener">@PouncerTag</a>.
       </p>
     </div>
   </section>
@@ -631,6 +523,32 @@
           break-away safety mechanism you already use stays in place.
         </p>
       </details>
+    </div>
+  </section>
+
+  <section class="section section-updates" id="updates">
+    <div class="updates-photo"><img src="assets/img/resting-cat-1280.webp" srcset="assets/img/resting-cat-640.webp 640w, assets/img/resting-cat-1280.webp 1280w" sizes="(max-width: 880px) 100vw, 50vw" width="1280" height="720" loading="lazy" alt="A relaxed tabby resting on a garden bench"></div>
+    <div class="wrap narrow">
+      <h2>Be part of what comes next.</h2>
+      <p class="section-lede">
+        We are heading for a crowdfunding launch. Leave an address for build updates, field-test
+        results — including the ones that go against us — and early-backer access.
+      </p>
+
+      <form class="signup" id="signup-form" data-endpoint="" novalidate>
+        <label class="sr-only" for="email">Email address</label>
+        <input id="email" name="email" type="email" inputmode="email" autocomplete="email"
+               placeholder="you@example.com" required>
+        <button class="btn btn-primary" type="submit">Keep me posted</button>
+        <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+      </form>
+
+      <p class="fineprint">
+        This opens your email app so you can send a signup request. You can also <a href="mailto:hello@pouncer.uk?subject=Pouncer%20launch%20updates">email us directly</a>. One list, low volume, unsubscribe any time. No payment is taken and nothing is binding —
+        <a href="preorder/">what joining the list does and does not mean</a>, and
+        <a href="privacy/">what we do with your address</a>. Follow along at
+        <a href="https://twitter.com/PouncerTag" rel="noopener">@PouncerTag</a>.
+      </p>
     </div>
   </section>
 

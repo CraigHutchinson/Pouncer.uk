@@ -647,23 +647,20 @@ img { max-width: 100%; height: auto; }
   font-size: 1.02rem; max-width: 46ch;
 }
 
-/* ---------- scroll-driven module stage ---------- */
+/* ---------- optional module viewer ---------- */
 
-/* The track is tall; the stage pins inside it, so scrolling the track length
-   is what drives the module apart. Height is in viewport units so the scrub
-   lasts about two screens regardless of device. */
-.module-track { height: 280vh; position: relative; margin: clamp(20px, 3vw, 36px) 0; }
+.module-track { position: relative; margin: 0; min-width: 0; }
 
 .module-sticky {
-  position: sticky; top: 0;
-  height: 100vh;
+  position: relative;
+  height: auto;
   display: flex; flex-direction: column; align-items: center; justify-content: center;
   gap: 10px;
 }
 
 .module-stage {
   position: relative;
-  width: min(560px, 82vw);
+  width: min(480px, 100%);
   aspect-ratio: 1 / 1;
 }
 .module-stage .product-figure,
@@ -688,8 +685,7 @@ img { max-width: 100%; height: auto; }
 }
 .module-stage[data-state="live"] ~ .module-hint { opacity: .55; }
 
-/* No pinning where it would trap a short viewport, and no scrub prompt when
-   the visitor has asked for less motion. */
+/* Keep the static concept comfortable on short viewports. */
 @media (max-height: 560px) {
   .module-track { height: auto; }
   .module-sticky { position: static; height: auto; }
@@ -747,8 +743,8 @@ img { max-width: 100%; height: auto; }
 }
 @media(max-width:560px) {
  .hero-art { height:310px; }
- .nature-grid { grid-template-columns:1fr; gap:24px; }
- .nature-grid img { height:280px; }
+ .nature-grid { gap:10px; }
+ .nature-grid img { height:120px; }
  .nature-grid figure:nth-child(3) img { object-position:center 65%; }
  .hero-actions { gap:8px; }
  .hero-actions .btn { padding:12px 17px; }
@@ -765,9 +761,67 @@ img { max-width: 100%; height: auto; }
 .compare-card,.note-card,.pillar { background:transparent; border:0; border-top:1px solid var(--line); border-radius:0; padding:24px 0; }
 .compare-card-ours { box-shadow:none; border-color:var(--accent-strong); }
 .section-product { background:var(--bg); }
-.module-track { height:230vh; }
+
 @media(max-width:880px) { .steps { grid-template-columns:repeat(2,minmax(0,1fr)); gap:36px 24px; } .step::after { display:none; } }
 @media(max-width:480px) { .steps { gap:30px 16px; } .step h3 { font-size:1.16rem; } .step p { font-size:.85rem; } .cat-art { margin-bottom:10px; } }
 @media(prefers-reduced-motion:reduce),(max-height:560px) { .module-track { height:auto; } }
 
 .hero-art img { object-position:right center; }
+
+/* Page rhythm: a short introduction, the idea, the object, then the evidence. */
+.section { padding: clamp(48px, 6vw, 84px) 0; }
+.nature-story { border-top:1px solid var(--line); }
+.nature-inner { display:grid; grid-template-columns:1fr 1.2fr; align-items:center; gap:56px; }
+.nature-copy h2 { max-width:15ch; }
+.nature-copy p:not(.eyebrow) { color:var(--muted); font-size:.98rem; }
+.text-link { color:var(--text); font-size:.9rem; text-underline-offset:5px; }
+.nature-grid { margin:0; gap:16px; }
+.nature-grid img { height:200px; border-radius:60px 60px 12px 12px; }
+.nature-grid figcaption { font-size:.8rem; color:var(--muted); margin-top:10px; text-align:center; }
+.product-overview { display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center; margin:32px 0; }
+.product-facts-grid { display:grid; grid-template-columns:1fr; gap:24px; margin:0; }
+.product-facts h3 { font-family:var(--font-display); font-size:1.35rem; font-weight:400; text-transform:none; letter-spacing:normal; color:var(--text); }
+.module-controls { width:min(320px,100%); text-align:center; }
+.module-controls[hidden] { display:none; }
+.module-controls label { display:block; font-size:.88rem; }
+.module-controls input { width:100%; accent-color:var(--accent-strong); min-height:44px; cursor:pointer; }
+.module-controls span { display:block; color:var(--muted); font-size:.75rem; }
+.design-details,.research-details { border-top:1px solid var(--line); border-bottom:1px solid var(--line); margin-top:28px; padding:18px 0; }
+.design-details summary,.research-details summary { cursor:pointer; font-weight:600; padding:4px 0; }
+.research-details > p { color:var(--muted); max-width:75ch; }
+.design-details .product-figure-wide { max-width:720px; margin:24px auto; }
+.section-status { background:var(--surface-alt); }
+.status-list { display:grid; grid-template-columns:1fr 1fr; column-gap:40px; }
+.status-list li { grid-template-columns:1fr; gap:12px; padding:22px 0; align-content:start; }
+.status-list li:last-child { border-bottom:0; }
+.section-faq > .wrap { max-width:var(--wrap); display:grid; grid-template-columns:1fr 2fr; column-gap:64px; }
+.section-faq h2 { grid-row:1 / span 20; }
+.section-faq details { grid-column:2; }
+.section-updates .updates-photo { min-height:420px; }
+.section-sources { padding:40px 0; }
+.section-sources > .wrap { max-width:var(--wrap); }
+.sources { columns:2; column-gap:40px; }
+.sources li { break-inside:avoid; }
+@media(max-width:880px) {
+ .nature-inner { grid-template-columns:1fr; gap:24px; }
+ .nature-copy h2 { max-width:none; }
+ .nature-grid img { height:170px; }
+ .product-overview { grid-template-columns:1fr; gap:30px; }
+ .product-facts-grid { grid-template-columns:1fr 1fr; }
+ .section-faq > .wrap { display:block; }
+ .section-updates .updates-photo { min-height:0; height:260px; }
+}
+@media(max-width:560px) {
+ .wrap { padding-left:22px; padding-right:22px; }
+ .hero-inner { padding:0; }
+ .nature-story { padding:32px 0; }
+ .nature-copy h2 { font-size:1.85rem; }
+ .nature-copy p:not(.eyebrow) { font-size:.9rem; }
+ .nature-grid { gap:10px; }
+ .nature-grid img { height:120px; border-radius:40px 40px 8px 8px; }
+ .nature-grid figcaption { font-size:.7rem; }
+ .product-facts-grid,.status-list { grid-template-columns:1fr; }
+ .module-caption { font-size:.92rem; }
+ .sources { columns:1; }
+ .section-updates .updates-photo { height:220px; }
+}
