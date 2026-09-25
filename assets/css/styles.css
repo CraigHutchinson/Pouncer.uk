@@ -2,22 +2,22 @@
 
 :root {
   --bg: #f7f4ec;
-  --surface: #ffffff;
-  --surface-alt: #e8ecdf;
-  --text: #243f32;
-  --muted: #526356;
+  --surface: #fcfaf5;
+  --surface-alt: #e2e8d9;
+  --text: #234238;
+  --muted: #52665a;
   --line: #d7dcce;
   --deep: #243f32;
   --deep-soft: #345340;
   --accent: #bd8c43;
   --accent-strong: #855b22;
   --on-deep: #f4f2ee;
-  --on-deep-muted: #b6bccd;
+  --on-deep-muted: #c0cbbb;
   --radius: 14px;
   --wrap: 1120px;
   --font: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --cat: #345340;
-  --cat-prey: #5a6790;
+  --cat-prey: #627c66;
   --cat-disc: #855b22;
   --font-display: ui-serif, Georgia, "Iowan Old Style", "Palatino Linotype", Palatino,
                   "Times New Roman", serif;
@@ -36,7 +36,7 @@
     --accent: #f0ac44;
     --accent-strong: #f5c274;
     --on-deep: #f2f2e8;
-    --on-deep-muted: #9aa3b6;
+    --on-deep-muted: #b0c1b1;
     --cat: #b2c9b6;
     --cat-prey: #9bb29f;
     --cat-disc: #f0ac44;
@@ -233,30 +233,12 @@ img { max-width: 100%; height: auto; }
 }
 .step { position: relative; padding-top: 12px; border-top: 2px solid var(--line); }
 
-/* Posture figures. They carry real information — what a stalk looks like
-   against a launch — so they are inline SVG that inherits the theme rather
-   than flat images that would need a second file per colour scheme.
-
-   Line art, not silhouette. The spine stroke IS the gesture, and the gesture
-   is what the accelerometer traces. It also matches the logo's own vocabulary:
-   an arc plus two ear marks, "the cat, reduced to two marks". An earlier pass
-   built these from filled primitives and landed in the uncanny middle —
-   neither realistic nor designed. */
-.cat-fig { display: block; width: 100%; max-width: 230px; height: auto; margin: 4px 0 10px; }
-.cat-spine { fill: none; stroke: var(--cat); stroke-width: 6.5; stroke-linecap: round; }
-.cat-head  { fill: none; stroke: var(--cat); stroke-width: 6.5; stroke-linecap: round; }
-.cat-limb  { fill: none; stroke: var(--cat); stroke-width: 4.5; stroke-linecap: round; }
-.cat-ear   { fill: var(--cat); }
-/* Not --accent: on the light page that is 2.29:1, and in line art the disc
-   floats on bare background instead of sitting on a dark body. The deeper
-   amber gives 3.56:1 light; dark mode keeps the brighter accent at 9.69:1. */
-.cat-disc  { fill: var(--cat-disc); }
-.cat-ground { stroke: var(--line); stroke-width: 2; stroke-dasharray: 2 8; stroke-linecap: round; }
-/* The prey sits at a lighter weight than the cat on purpose: it is the thing
-   at risk, not the subject of the diagram. */
-.cat-prey { fill: none; stroke: var(--cat-prey); stroke-width: 2.6;
-            stroke-linecap: round; stroke-linejoin: round; }
-.cat-prey circle { fill: var(--cat-prey); stroke: none; }
+/* Editable contour illustrations: the pose carries the behaviour. */
+.cat-fig { display:block; width:100%; height:auto; max-width:280px; margin:0 auto 18px; overflow:visible; }
+.cat-outline { fill:none; stroke:var(--cat); stroke-width:1.9; stroke-linecap:round; stroke-linejoin:round; }
+.cat-detail { fill:none; stroke:var(--cat); stroke-width:1.3; stroke-linecap:round; }
+.cat-disc { fill:var(--cat-disc); }
+.cat-meadow { fill:none; stroke:var(--cat-prey); stroke-width:1; stroke-linecap:round; opacity:.65; }
 
 /* Prey key. The glyph replaces the colour chip, so shape and colour encode the
    same three groups — redundant encoding, which survives colour-blindness
@@ -775,3 +757,21 @@ img { max-width: 100%; height: auto; }
  .hero-actions { gap:8px; }
  .hero-actions .btn { padding:12px 17px; }
 }
+
+/* A quieter illustrated sequence, with room for each pose to breathe. */
+.steps { grid-template-columns:repeat(4,minmax(0,1fr)); gap:28px; margin-top:42px; }
+.step { border:0; padding:0; }
+.step:not(:last-child)::after { content:''; position:absolute; width:58px; height:22px; border-top:1px solid var(--accent-strong); border-radius:50%; top:8px; right:-43px; transform:rotate(15deg); opacity:.65; }
+.step-num { background:transparent; border:1px solid var(--line); color:var(--muted); width:24px; height:24px; font-size:.72rem; margin-bottom:12px; }
+.step h3 { font-family:var(--font-display); font-size:1.4rem; font-weight:400; }
+.step p { font-size:.92rem; line-height:1.65; }
+.section-how .callout { background:transparent; border:0; border-top:1px solid var(--line); border-radius:0; padding:22px 0 0; font-size:.88rem; max-width:85ch; }
+.compare-card,.note-card,.pillar { background:transparent; border:0; border-top:1px solid var(--line); border-radius:0; padding:24px 0; }
+.compare-card-ours { box-shadow:none; border-color:var(--accent-strong); }
+.section-product { background:var(--bg); }
+.module-track { height:230vh; }
+@media(max-width:880px) { .steps { grid-template-columns:repeat(2,minmax(0,1fr)); gap:36px 24px; } .step::after { display:none; } }
+@media(max-width:480px) { .steps { gap:30px 16px; } .step h3 { font-size:1.16rem; } .step p { font-size:.85rem; } .cat-fig { margin-bottom:10px; } }
+@media(prefers-reduced-motion:reduce),(max-height:560px) { .module-track { height:auto; } }
+
+.hero-art img { object-position:right center; }
