@@ -233,12 +233,8 @@ img { max-width: 100%; height: auto; }
 }
 .step { position: relative; padding-top: 12px; border-top: 2px solid var(--line); }
 
-/* Editable contour illustrations: the pose carries the behaviour. */
-.cat-fig { display:block; width:100%; height:auto; max-width:280px; margin:0 auto 18px; overflow:visible; }
-.cat-outline { fill:none; stroke:var(--cat); stroke-width:1.9; stroke-linecap:round; stroke-linejoin:round; }
-.cat-detail { fill:none; stroke:var(--cat); stroke-width:1.3; stroke-linecap:round; }
-.cat-disc { fill:var(--cat-disc); }
-.cat-meadow { fill:none; stroke:var(--cat-prey); stroke-width:1; stroke-linecap:round; opacity:.65; }
+/* Locally hosted painterly poses: explanatory artwork, not recorded trials. */
+.cat-art { display:block; width:100%; height:auto; aspect-ratio:3/2; object-fit:contain; margin:0 auto 18px; }
 
 /* Prey key. The glyph replaces the colour chip, so shape and colour encode the
    same three groups — redundant encoding, which survives colour-blindness
@@ -771,7 +767,7 @@ img { max-width: 100%; height: auto; }
 .section-product { background:var(--bg); }
 .module-track { height:230vh; }
 @media(max-width:880px) { .steps { grid-template-columns:repeat(2,minmax(0,1fr)); gap:36px 24px; } .step::after { display:none; } }
-@media(max-width:480px) { .steps { gap:30px 16px; } .step h3 { font-size:1.16rem; } .step p { font-size:.85rem; } .cat-fig { margin-bottom:10px; } }
+@media(max-width:480px) { .steps { gap:30px 16px; } .step h3 { font-size:1.16rem; } .step p { font-size:.85rem; } .cat-art { margin-bottom:10px; } }
 @media(prefers-reduced-motion:reduce),(max-height:560px) { .module-track { height:auto; } }
 
 .hero-art img { object-position:right center; }
