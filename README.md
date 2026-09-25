@@ -24,7 +24,7 @@ assets/
   css/styles.css        # single stylesheet, light and dark themes
   js/main.js            # progressive enhancement only
   img/                  # SVG logo, favicon, hero diagram, social card
-Claude.md               # conventions — read before changing copy
+AGENTS.md               # conventions — read before changing copy
 ```
 
 ## Run it locally
@@ -39,7 +39,7 @@ make paths behave exactly as they do in production.
 
 ## Before you change anything
 
-Read [`Claude.md`](Claude.md). It is written for AI assistants but applies to
+Read [`AGENTS.md`](AGENTS.md). It is written for AI assistants but applies to
 everyone: it carries the claim rules, the tone, the UK English requirement and
 the technical constraints. The claim rules are not stylistic preferences —
 several statements are deliberately absent from this site because no
@@ -121,7 +121,7 @@ labels, which are what satisfies the light-mode contrast relief rule.
 `.github/workflows/pages.yml` publishes this repository to GitHub Pages on every
 push to `main`.
 
-`README.md` and `Claude.md` are for people working here, not for visitors, so
+`README.md` and `AGENTS.md` are for people working here, not for visitors, so
 the workflow stages a copy of the repository, excludes them, and **fails the
 build if any markdown file is left in the publish set**. A new repository
 document therefore cannot leak onto the site by being forgotten. Add anything

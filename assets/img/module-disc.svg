@@ -11,7 +11,7 @@
       <stop offset="1" stop-color="#8d867b"/>
     </linearGradient>
     <radialGradient id="dial" cx="0.36" cy="0.30" r="0.85">
-      <stop offset="0" stop-color="#26304a"/><stop offset="1" stop-color="#0b101e"/>
+      <stop offset="0" stop-color="#345340"/><stop offset="1" stop-color="#102419"/>
     </radialGradient>
     <radialGradient id="dialLight" cx="0.34" cy="0.26" r="0.78">
       <stop offset="0" stop-color="#ffffff" stop-opacity="0.17"/>

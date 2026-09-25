@@ -15,13 +15,13 @@ import { makeFaceTextures, makeBrushedRoughness } from './textures.js';
 
 export const PALETTE = {
   case:   0xcfcabf,  // machined aluminium
-  face:   0x1b2338,  // dark polymer face
+  face:   0x243f32,  // dark polymer face
   lens:   0xe0992f,  // amber alert lens
   piezo:  0xa98f4e,  // brass sounder, knocked back
   board:  0x17402f,  // circuit board, desaturated
   cell:   0xb9bfc8,  // cell
-  back:   0x2b3450,  // caseback
-  strap:  0x8a7f68,  // natural webbing
+  back:   0x253e30,  // caseback
+  strap:  0x81765d,  // natural webbing
 };
 
 /** One layer of the stack: mesh, plus the height it settles at when exploded. */

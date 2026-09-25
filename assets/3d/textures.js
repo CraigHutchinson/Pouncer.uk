@@ -2,7 +2,7 @@
  * Procedurally generated textures.
  *
  * Drawn on a canvas at runtime rather than shipped as image files: it keeps the
- * repository free of binary assets, and more importantly it means the viewer
+ * procedural surface detail compact, and more importantly it means the viewer
  * still fetches nothing from anywhere — the privacy page says the site loads
  * nothing from a third party, and that has to stay true of the 3D path too.
  */
@@ -23,7 +23,7 @@ export function makeFaceTextures(size = 1024) {
   const [cMap, g] = canvas(size);
   const mid = size / 2;
 
-  g.fillStyle = '#1b2338';
+  g.fillStyle = '#243f32';
   g.fillRect(0, 0, size, size);
 
   // Concentric turning: fine alternating rings, densest toward the rim.
@@ -46,7 +46,7 @@ export function makeFaceTextures(size = 1024) {
   g.letterSpacing = `${Math.round(size * 0.014)}px`;
   g.fillStyle = 'rgba(0,0,0,0.55)';
   g.fillText('POUNCER', 0, Math.round(size * 0.004));
-  g.fillStyle = 'rgba(190,205,235,0.62)';
+  g.fillStyle = 'rgba(208,218,190,0.62)';
   g.fillText('POUNCER', 0, 0);
   g.restore();
 

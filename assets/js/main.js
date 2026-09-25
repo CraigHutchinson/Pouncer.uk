@@ -84,7 +84,7 @@
     var endpoint = form.getAttribute("data-endpoint");
 
     if (!endpoint) {
-      setStatus("Opening your mail app — send the message and you are on the list.");
+      setStatus("Opening your mail app — send the message to request launch updates.");
       window.location.href =
         "mailto:" + LIST_ADDRESS +
         "?subject=" + encodeURIComponent("Pouncer launch updates") +

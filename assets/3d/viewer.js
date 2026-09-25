@@ -42,7 +42,7 @@ export async function mountViewer(el, opts = {}) {
   const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: background === null });
   renderer.setPixelRatio(Math.min(devicePixelRatio || 1, pixelRatioCap));
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
-  renderer.toneMappingExposure = 1.05;
+  renderer.toneMappingExposure = 0.85;
   el.appendChild(renderer.domElement);
   renderer.domElement.style.display = 'block';
   renderer.domElement.style.width = '100%';
@@ -53,7 +53,11 @@ export async function mountViewer(el, opts = {}) {
 
   // Procedural environment: believable metal with no HDRI to download.
   const pmrem = new THREE.PMREMGenerator(renderer);
-  scene.environment = pmrem.fromScene(new RoomEnvironment(), 0.04).texture;
+  const environment = new RoomEnvironment();
+  const environmentTarget = pmrem.fromScene(environment, 0.04);
+  scene.environment = environmentTarget.texture;
+  scene.environmentIntensity = 0.75;
+  environment.dispose();
 
   const camera = new THREE.PerspectiveCamera(32, 1, 0.1, 100);
   camera.position.set(1.22, 0.58, 1.52);
@@ -61,13 +65,13 @@ export async function mountViewer(el, opts = {}) {
   // Studio rig: a broad key, a soft fill to keep the shadow side readable, and
   // two rims to put a defined edge on the bezel, which is what sells machined
   // metal. RoomEnvironment alone left everything flat.
-  const key = new THREE.DirectionalLight(0xfff6e8, 2.4);
+  const key = new THREE.DirectionalLight(0xfff6e8, 1.8);
   key.position.set(-1.5, 2.4, 1.5);
   scene.add(key);
-  const fill = new THREE.DirectionalLight(0xdfe8ff, 0.75);
+  const fill = new THREE.DirectionalLight(0xe9efdf, 0.75);
   fill.position.set(1.6, 0.9, 2.2);
   scene.add(fill);
-  const rimA = new THREE.DirectionalLight(0xbcd0ff, 1.6);
+  const rimA = new THREE.DirectionalLight(0xd5e4cd, 1.0);
   rimA.position.set(2.0, 0.5, -1.9);
   scene.add(rimA);
   const rimB = new THREE.DirectionalLight(0xffd9a8, 1.1);
@@ -142,7 +146,8 @@ export async function mountViewer(el, opts = {}) {
   // a GPU for a canvas nobody is looking at.
   const io = new IntersectionObserver(([e]) => {
     running = e.isIntersecting;
-    if (running) frame(); else cancelAnimationFrame(raf);
+    cancelAnimationFrame(raf);
+    if (running) frame();
   }, { threshold: 0.01 });
   io.observe(el);
 
@@ -160,7 +165,7 @@ export async function mountViewer(el, opts = {}) {
         if (o.geometry) o.geometry.dispose();
         if (o.material) (Array.isArray(o.material) ? o.material : [o.material]).forEach((m) => m.dispose());
       });
-      pmrem.dispose(); renderer.dispose();
+      environmentTarget.dispose(); pmrem.dispose(); renderer.dispose();
       if (renderer.domElement.parentNode) renderer.domElement.parentNode.removeChild(renderer.domElement);
     },
   };

@@ -38,9 +38,9 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v6
 
-      # README.md and Claude.md are for people working on the repository, not
+      # README.md and AGENTS.md are for people working on the repository, not
       # for visitors. Without this step they would be served at /README.md and
-      # /Claude.md.
+      # /AGENTS.md.
       - name: Stage the publishable site
         run: |
           set -euo pipefail
@@ -51,7 +51,7 @@ jobs:
           git archive HEAD | tar -x -C _site
           rm -rf _site/.github
           rm -rf _site/sandbox
-          rm -f  _site/README.md _site/Claude.md
+          rm -f  _site/README.md _site/AGENTS.md _site/Claude.md
           echo "Publishing:"
           find _site -type f | sort
           # Fail the build rather than publish a repository document by accident.
