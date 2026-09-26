@@ -23,9 +23,9 @@
       <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
     </linearGradient>
     <linearGradient id="strap" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#5d5544"/><stop offset="0.18" stop-color="#8a7f68"/>
-      <stop offset="0.5" stop-color="#9c9078"/><stop offset="0.85" stop-color="#7b705b"/>
-      <stop offset="1" stop-color="#544d3e"/>
+      <stop offset="0" stop-color="#243f32"/><stop offset="0.18" stop-color="#42624a"/>
+      <stop offset="0.5" stop-color="#58745a"/><stop offset="0.85" stop-color="#345340"/>
+      <stop offset="1" stop-color="#233d30"/>
     </linearGradient>
     <radialGradient id="lens" cx="0.34" cy="0.3" r="0.8">
       <stop offset="0" stop-color="#ffe6bd"/><stop offset="0.35" stop-color="#f0ac44"/>
@@ -39,10 +39,10 @@
     <clipPath id="dialClip"><circle cx="450" cy="450" r="238"/></clipPath>
   </defs>
   <ellipse cx="450" cy="476" rx="330" ry="316" fill="url(#shade)"/>
-  <g>
+  <g transform="rotate(90 450 450)">
     <path d="M318 0 L582 0 L566 232 Q556 268 520 276 L380 276 Q344 268 334 232 Z" fill="url(#strap)"/>
     <path d="M334 668 Q344 632 380 624 L520 624 Q556 632 566 668 L582 900 L318 900 Z" fill="url(#strap)"/>
-    <g stroke="#3f3a2e" stroke-width="1.2" opacity="0.18">
+    <g stroke="#1c3024" stroke-width="1.2" opacity="0.18">
       <path d="M335 8 H565"/>
       <path d="M334 21 H566"/>
       <path d="M333 34 H567"/>
@@ -86,7 +86,7 @@
       <path d="M348 881 H552"/>
       <path d="M348 894 H552"/>
     </g>
-    <g stroke="#cbbb96" stroke-width="3" stroke-dasharray="11 9" stroke-linecap="round" opacity="0.7">
+    <g stroke="#94a98a" stroke-width="3" stroke-dasharray="11 9" stroke-linecap="round" opacity="0.7">
       <path d="M346 0 L336 246"/><path d="M554 0 L564 246"/>
       <path d="M336 654 L346 900"/><path d="M564 654 L554 900"/>
     </g>

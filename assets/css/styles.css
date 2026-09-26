@@ -427,7 +427,7 @@ img { max-width: 100%; height: auto; }
 .table-scroll { overflow-x: auto; margin-top: 30px; }
 
 .evidence-table {
-  width: 100%; border-collapse: collapse; min-width: 480px;
+  width: 100%; border-collapse: collapse; min-width: 0;
   background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
 }
 .evidence-table th, .evidence-table td {
@@ -472,7 +472,7 @@ img { max-width: 100%; height: auto; }
 /* Diverging bar: zero is the centre, data-ends round away from it. */
 .dbar {
   position: relative; height: 9px; margin: 0 0 9px;
-  background: var(--surface-alt); border-radius: 5px; min-width: 170px;
+  background: var(--surface-alt); border-radius: 5px; min-width: 0;
 }
 .dbar::before {
   content: ""; position: absolute; left: 50%; top: -4px; bottom: -4px;
@@ -824,4 +824,16 @@ img { max-width: 100%; height: auto; }
  .module-caption { font-size:.92rem; }
  .sources { columns:1; }
  .section-updates .updates-photo { height:220px; }
+}
+
+/* Each intervention and its result stay together on narrow screens. */
+@media(max-width:600px) {
+ .evidence-table { display:block; border:0; background:transparent; }
+ .evidence-table thead { position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); }
+ .evidence-table tbody { display:grid; gap:12px; }
+ .evidence-table tbody tr { display:block; border:1px solid var(--line); border-radius:var(--radius); background:var(--surface); padding:18px; }
+ .evidence-table tbody th,.evidence-table tbody td { display:block; width:auto; border:0; padding:0; }
+ .evidence-table tbody th { margin-bottom:16px; }
+ .evidence-table tbody td { font-size:.92rem; }
+ .evidence-table .dbar { margin-bottom:12px; }
 }

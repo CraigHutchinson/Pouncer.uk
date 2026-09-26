@@ -60,7 +60,7 @@ export async function mountViewer(el, opts = {}) {
   environment.dispose();
 
   const camera = new THREE.PerspectiveCamera(32, 1, 0.1, 100);
-  camera.position.set(1.22, 0.58, 1.52);
+  camera.position.set(0, 1.4, 1.6);
 
   // Studio rig: a broad key, a soft fill to keep the shadow side readable, and
   // two rims to put a defined edge on the bezel, which is what sells machined
@@ -155,7 +155,7 @@ export async function mountViewer(el, opts = {}) {
     setExploded(v) { t = Math.max(0, Math.min(1, v)); applyExplode(); },
     getExploded() { return t; },
     setAutoRotate(v) { controls.autoRotate = !!v; },
-    resetView() { camera.position.set(1.22, 0.58, 1.52); controls.target.set(0,0,0); controls.update(); },
+    resetView() { camera.position.set(0, 1.4, 1.6); controls.target.set(0,0,0); controls.update(); },
     partLabels() { return parts.map((p) => ({ name: p.name, label: p.userData.label })); },
     renderer, scene, camera, controls, module,
     dispose() {

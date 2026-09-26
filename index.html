@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Pouncer — A Smart Cat Collar Built to Warn Wildlife Before the Pounce</title>
-<meta name="description" content="Pouncer is a smart cat collar for owners who want the birds, voles and shrews in their garden to survive. A small module on the collar your cat already wears, being built to read the stalk-and-launch signature and sound one short warning at the moment of intent — silent the rest of the time.">
+<meta name="description" content="Pouncer is a smart cat collar for owners who want the birds, voles and shrews in their garden to survive. A small module on the collar your cat already wears, being developed to recognise pre-pounce movement and give wildlife an early warning during the stalk. Detection and wildlife benefit still need testing.">
 <link rel="canonical" href="https://pouncer.uk/">
 <meta name="theme-color" content="#243f32">
 
@@ -94,52 +94,52 @@
     <div class="wrap">
       <p class="eyebrow">The idea, in four movements</p><h2>Quiet by design.</h2>
       <p class="section-lede">
-        Observe. Recognise the stalk. Confirm the launch. Then settle. Pouncer is being designed
-        to read a sequence of movements, rather than react to every jump or playful tumble.
+        The opportunity starts before the leap. Pouncer is being developed to recognise the build-up
+        to a pounce and give wildlife an early warning during the stalk — then return to quiet.
       </p>
 
       <ol class="steps">
         <li class="step">
-          <img class="cat-art" src="assets/img/cat-observe.webp" width="600" height="400" alt="A seated tabby watching attentively" loading="lazy">
+          <img class="cat-art" src="assets/img/cat-observe.webp" width="600" height="400" alt="A seated tabby watching attentively, wearing a collar with a round Pouncer tag" loading="lazy">
           <span class="step-num">1</span>
           <h3>Observe</h3>
           <p>
-            Continuous low-power sampling on the collar. Ordinary movement stays below the
-            confidence threshold and produces no output at all.
+            The collar records movement. The aim is to leave walking, resting and everyday
+            activity quiet while looking for a possible hunting sequence.
           </p>
         </li>
         <li class="step">
-          <img class="cat-art" src="assets/img/cat-stalk.webp" width="600" height="400" alt="A tabby crouching low with its head forward" loading="lazy">
+          <img class="cat-art" src="assets/img/cat-stalk.webp" width="600" height="400" alt="A tabby crouching low with its head forward, wearing a collar with a round Pouncer tag" loading="lazy">
           <span class="step-num">2</span>
-          <h3>Stalk detected</h3>
+          <h3>Stalk &amp; early cue</h3>
           <p>
-            Sustained low-velocity stalking posture raises confidence. At this stage Pouncer can
-            give a brief visual pulse only — no sound.
+            The research goal is to recognise preparation for a pounce and give a brief warning
+            before launch. A visual pulse is one option; cue type and timing need testing.
           </p>
         </li>
         <li class="step">
-          <img class="cat-art" src="assets/img/cat-launch.webp" width="600" height="400" alt="A tabby springing forward with its paws extended" loading="lazy">
+          <img class="cat-art" src="assets/img/cat-launch.webp" width="600" height="400" alt="A tabby springing forward with its paws extended, wearing a collar with a round Pouncer tag" loading="lazy">
           <span class="step-num">3</span>
-          <h3>Launch confirmed</h3>
+          <h3>Follow the pounce</h3>
           <p>
-            Launch acceleration on top of a confirmed stalk triggers one short, forward-directed
-            chirp — the head start the whole design is aiming at.
+            Record what follows the early signs. Did the cat launch, pause or walk away?
+            Comparing these sequences will help test detection and warning timing.
           </p>
         </li>
         <li class="step">
-          <img class="cat-art" src="assets/img/cat-settle.webp" width="600" height="400" alt="A tabby resting with its paws tucked and tail curled" loading="lazy">
+          <img class="cat-art" src="assets/img/cat-settle.webp" width="600" height="400" alt="A tabby resting with its paws tucked and tail curled, wearing a collar with a round Pouncer tag" loading="lazy">
           <span class="step-num">4</span>
           <h3>Cooldown &amp; log</h3>
           <p>
-            Pouncer then stays acoustically quiet until motion settles and fresh evidence
-            appears. Every candidate — alerted or suppressed — is logged for review.
+            The design includes a quiet cooldown to limit repeated cues, with candidate events
+            logged for review and future improvement.
           </p>
         </li>
       </ol>
 
       <p class="callout">
         <strong>Design intent, not a demonstrated outcome.</strong> The classifier is still in development.
-        Testing must establish whether the cue gives wildlife a useful chance to react. <a href="#status">Follow the development</a>.
+        Early recordings will test whether preparatory movements — including the familiar hind-leg “wobble” — can be detected from the collar before launch. This is a candidate signal, not a proven trigger. Detection, false alerts and benefit to wildlife all need testing. <a href="#status">Follow the development</a>.
       </p>
     </div>
   </section>
@@ -219,7 +219,7 @@
       </p>
 
       <div class="table-scroll">
-        <table class="evidence-table">
+        <table class="evidence-table" role="table">
           <caption class="sr-only">
             Change in prey brought home by intervention, Cecchetti et al. (2021)
           </caption>
@@ -227,37 +227,37 @@
             <tr><th scope="col">Intervention</th><th scope="col">Change in prey brought home</th></tr>
           </thead>
           <tbody>
-            <tr>
-              <th scope="row">High-meat-content, grain-free food</th>
-              <td>
+            <tr role="row">
+              <th role="rowheader" scope="row">High-meat-content, grain-free food</th>
+              <td role="cell">
                 <div class="dbar" aria-hidden="true"><span class="dbar-fill dbar-neg" style="width:40%"></span></div>
                 <span class="delta delta-down">−36%</span> overall
               </td>
             </tr>
-            <tr>
-              <th scope="row">5–10 minutes of daily object play</th>
-              <td>
+            <tr role="row">
+              <th role="rowheader" scope="row">5–10 minutes of daily object play</th>
+              <td role="cell">
                 <div class="dbar" aria-hidden="true"><span class="dbar-fill dbar-neg" style="width:27.8%"></span></div>
                 <span class="delta delta-down">−25%</span> overall
               </td>
             </tr>
-            <tr>
-              <th scope="row">Brightly coloured collar cover (visual)</th>
-              <td>
+            <tr role="row">
+              <th role="rowheader" scope="row">Brightly coloured collar cover (visual)</th>
+              <td role="cell">
                 <div class="dbar" aria-hidden="true"><span class="dbar-fill dbar-neg" style="width:46.7%"></span></div>
                 <span class="delta delta-down">−42%</span> birds; no discernible effect on mammals
               </td>
             </tr>
-            <tr>
-              <th scope="row">Cat bells</th>
-              <td>
+            <tr role="row">
+              <th role="rowheader" scope="row">Cat bells</th>
+              <td role="cell">
                 <div class="dbar" aria-hidden="true"><span class="dbar-zero"></span></div>
                 <span class="delta delta-flat">No discernible effect in this trial</span>
               </td>
             </tr>
-            <tr>
-              <th scope="row">Puzzle feeders</th>
-              <td>
+            <tr role="row">
+              <th role="rowheader" scope="row">Puzzle feeders</th>
+              <td role="cell">
                 <div class="dbar" aria-hidden="true"><span class="dbar-fill dbar-pos" style="width:36.7%"></span></div>
                 <span class="delta delta-up">+33%</span> — worse
               </td>
@@ -275,7 +275,7 @@
       <div class="verdict">
         <h3>What the bell evidence tells us</h3>
         <p>The table reports one trial, not the whole literature. Bell results are mixed: some studies found fewer prey brought home, while the 2021 trial above found no discernible effect. <a href="#source-bells">See the wider evidence</a>.</p>
-        <p>A mechanical bell responds to movement; it does not classify behaviour. Pouncer is being developed to recognise a stalk-and-launch sequence and trigger a brief cue. That difference is a design hypothesis, not evidence of better timing or fewer animals caught.</p>
+        <p>A mechanical bell responds to movement; it does not classify behaviour. Pouncer is being developed to recognise pre-pounce movement and give a brief cue during the stalk, before launch. That difference is a design hypothesis, not evidence of better timing or fewer animals caught.</p>
         <p class="verdict-foot">Pouncer's detection timing, false alerts, cat welfare and wildlife outcomes all need testing.</p>
       </div>
       <details class="research-details"><summary>Why birds and small mammals? The UK research</summary><p>A 2003 study estimated roughly 92 million prey items brought home by British cats between April and August. These are historical estimates of prey returned, not a measure of current population decline. The RSPB finds no clear evidence that cat predation drives UK bird declines.</p><figure class="viz viz-root">
@@ -340,9 +340,9 @@
         <li>
           <span class="status-tag status-tag-wip">In progress</span>
           <p>
-            Warning lead time. Measuring how long a real pounce lasts and how fast the collar can
-            decide — because a cue that lands with the strike has warned nobody. If we cannot beat
-            the clock, the device logs the event and makes no sound.
+            Pre-pounce detection and warning lead time. Early data collection will pair collar motion
+            with observed behaviour to test whether stalking and preparatory hind-leg movements
+            offer a reliable early signal. Cue type, timing and false-alert limits remain to be established.
           </p>
         </li>
         <li>
@@ -428,11 +428,18 @@
       </details>
 
       <details>
+        <summary>Could the pre-pounce “wobble” give an earlier warning?</summary>
+        <p>That is one of the signals we want to investigate. The question is whether preparatory hind-leg movements produce a recognisable pattern at the collar, early enough to give a useful cue. We need synchronised video and motion data, including play and abandoned stalks, before claiming that they do.</p>
+        <p><a href="https://www.nature.com/articles/s41598-021-92896-4" rel="noopener">Research using harness-mounted accelerometers</a> has classified cat behaviours. It does not establish pre-pounce prediction by Pouncer or show that a warning will protect wildlife.</p>
+      </details>
+
+      <details>
         <summary>What stops it firing during play?</summary>
         <p>
-          A single hard acceleration is never enough. The classifier requires a stalk phase, then
-          launch features, then a confirmation window — followed by a cooldown that needs fresh
-          evidence before it can sound again.
+          That remains an open testing question: play can include stalking and pouncing too.
+          We will compare hunting, play and ordinary movement in recorded data, including
+          sequences that do not end in a pounce. Confidence thresholds and cooldowns are design
+          tools, not yet proof that false alerts have been solved.
         </p>
       </details>
 
@@ -527,7 +534,7 @@
   </section>
 
   <section class="section section-updates" id="updates">
-    <div class="updates-photo"><img src="assets/img/resting-cat-1280.webp" srcset="assets/img/resting-cat-640.webp 640w, assets/img/resting-cat-1280.webp 1280w" sizes="(max-width: 880px) 100vw, 50vw" width="1280" height="720" loading="lazy" alt="A relaxed tabby resting on a garden bench"></div>
+    <div class="updates-photo"><img src="assets/img/resting-cat-1280.webp" srcset="assets/img/resting-cat-640.webp 640w, assets/img/resting-cat-1280.webp 1280w" sizes="(max-width: 880px) 100vw, 50vw" width="1280" height="720" loading="lazy" alt="Concept visual of a relaxed tabby wearing a collar with a round Pouncer tag on a garden bench"></div>
     <div class="wrap narrow">
       <h2>Be part of what comes next.</h2>
       <p class="section-lede">

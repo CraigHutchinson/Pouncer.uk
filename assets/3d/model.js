@@ -21,7 +21,7 @@ export const PALETTE = {
   board:  0x17402f,  // circuit board, desaturated
   cell:   0xb9bfc8,  // cell
   back:   0x253e30,  // caseback
-  strap:  0x81765d,  // natural webbing
+  strap:  0x345340,  // forest-green collar webbing
 };
 
 /** One layer of the stack: mesh, plus the height it settles at when exploded. */
@@ -135,7 +135,7 @@ export function buildModule() {
 /** Strap passing behind the module. Decorative context, not part of the stack. */
 export function buildStrap() {
   const mat = new THREE.MeshStandardMaterial({ color: PALETTE.strap, metalness: 0.0, roughness: 0.85 });
-  const strap = new THREE.Mesh(new THREE.BoxGeometry(0.44, 0.030, 3.2), mat);
+  const strap = new THREE.Mesh(new THREE.BoxGeometry(3.2, 0.030, 0.44), mat);
   strap.position.y = -0.070;
   strap.name = 'strap';
   return strap;
